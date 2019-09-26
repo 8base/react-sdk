@@ -1,20 +1,13 @@
 language: node_js
 node_js:
 - 10
-
-env:
-  global:
-    secure: eupDYU/hnBEV4zJXlfIWW5/y7oxJCIUqwKdFVicagnipOCIS1c/FROZgXqm/o5RMDSADQnSZfSx71Ziu/HOTf3k9wIycJhzz3uW4ERRBXJidjiqBWzMJEsiHhMdBS9TyyJODlxOFa/5rnpJ9TitAA8QScKrmPj4n39lj8qY2/zKLR2VI2jSaFIWwF9otpH3UquqJV7/slTvnTV8noUVgIeszgDvGRrvQ3bUELykcBFWQRJZ965QNYgwoBJdy+q9t1VW5AvvEDfV5qGyvrn7GZnkMvut1IXctpxwZOLFkZvS202dN0urdKRWgMiydO8o3yJLuQTjlxWIC2uizdFN1F78lr6yABNJRa5Ps75rfFPhHXL8Xx0w5QKu196EUOOaicEktO8k6r03t2iZc8nhYzBDPLxmrMgzwA0l90JAgq9y2QouI5vn4IRoxBABgCk38Bnsf6Zu9iDMakhyLhMBRYeORbQsK4k/GycfY4slMR89GQRWppuFkKgMtjFCIpzzvH9jv7R0cG5iLxM/GkncV7pNdIyLLnciHlBRzdBpKg5TJbFa2sz4DpM/ZofChuQ+16CXXv04seiKZpJNnvQSF7x2LODWWM8ebiRhVYteZCs3HiayXy3py+0o7N1mqhIWnrNB5fNFwV2b+s838p/gWs3buKJKumQSbsn9Ns7xs4/k=
-
 install:
 - yarn
 - yarn build-packages
-
 script:
 - yarn lint
 - yarn prettier:check
 - yarn test
-
 deploy:
 - provider: script
   script: bin/publish.sh
@@ -22,3 +15,6 @@ deploy:
   on:
     branch: master
     tags: false
+env:
+  global:
+    secure: I/7EhnIpoL7Xy2Pzbf9LMai9Wt/cVa8q2IJVR/GhsSgvT2tCFG/Q/8EeYGnMKhRqbwvc4p2glu4nAHaeJbsxPg1AeuaKuKNXGEc0S6QxN1NUg0X3UiP8eGfOyhYAANEZH3uhd7xGTsKOOewILOihngjCEZ/XPvrauiKdYQZaG95WLH6QHc1VvytWi7GKZnXdTkFdh0I6yGeVR48evmLageT/nTT767eBqA6xnR1Sktzwy8saDeTjv8tR6i861isgy+s+YaMOqW+/uK/oV3UjiEfEJsUAMa9vi/Jetu7GqH/g78+17F4dcq46dP/pc+p1xfM4YG/fl4w0XItjnUypP0j8CCmVxpWwT5X0Cipzzwswnso9vDZM9Fr999khyb+pWi7T8uvVhD0gtOy6S3ppaxr7+Mbxzd2I7cEe4FhIRXuXgMJ9mkmKjdfo3hdSd6iqnyP1TOcgaP71fTCD07OQd55YUARDFPEA2O9EavjSPHiQlT3X9tOM0Zpp+mB6SsndIK5zRGNclHAa6gSeVpNzGZgkIsNx2+uzokHfgyW1i7JWnNDm6VZ/BWnju1cKRotOYnNT0g0VM9a82CElJS1YffR27/VUf5djKdiZKnQ/nUhVUNmT4TXhDfqtl7cFVjR+6RixsE5+ujRKvsRMpD4XltGBT3u8JsWRoX9CnewtZpY=
