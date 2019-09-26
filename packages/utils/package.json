@@ -1,0 +1,51 @@
+{
+  "name": "@8base-react/utils",
+  "version": "0.37.2",
+  "repository": "https://github.com/8base/react-sdk",
+  "homepage": "https://github.com/8base/react-sdk/tree/master/packages/utils#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "../../bin/build-package.sh",
+    "watch": "../../bin/watch-package.sh",
+    "test": "NPM_ENV=test jest"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.2",
+    "jest": "24.7.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.json"
+      }
+    },
+    "setupFiles": [
+      "<rootDir>/test/jest.setup.ts"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**",
+      "!<rootDir>/**/__tests__/**"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ]
+  },
+  "license": "MIT"
+}
