@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as R from 'ramda';
 import gql from 'graphql-tag';
 import { Query, QueryResult } from 'react-apollo';
-import { TableConsumer, ITableConsumerRenderProps } from '@8base/table-schema-provider';
-import { PermissionsContext } from '@8base/permissions-provider';
+import { TableConsumer, ITableConsumerRenderProps } from '@8base-react/table-schema-provider';
+import { PermissionsContext } from '@8base-react/permissions-provider';
 import { createTableFilterGraphqlTag, TableSchema, SDKError, ERROR_CODES, PACKAGES } from '@8base/utils';
 
 type RecordsListFlattenData<T = object> = {

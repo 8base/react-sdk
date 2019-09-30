@@ -9,7 +9,7 @@ import {
   TableSchema,
   QueryGeneratorConfig,
 } from '@8base/utils';
-import { PermissionsContext } from '@8base/permissions-provider';
+import { PermissionsContext } from '@8base-react/permissions-provider';
 
 type CrudModes = 'create' | 'createMany' | 'update' | 'delete';
 

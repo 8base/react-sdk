@@ -3,7 +3,7 @@ import * as R from 'ramda';
 import { Query, QueryResult } from 'react-apollo';
 import gql from 'graphql-tag';
 import { SchemaNameGenerator } from '@8base/schema-name-generator';
-import { PermissionsContext } from '@8base/permissions-provider';
+import { PermissionsContext } from '@8base-react/permissions-provider';
 import { createTableRowQueryTag, TableSchema } from '@8base/utils';
 
 type RecordDataProps = {

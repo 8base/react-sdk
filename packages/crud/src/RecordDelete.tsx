@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MutationResult, MutationFunction } from 'react-apollo';
-import { TableConsumer, ITableConsumerRenderProps } from '@8base/table-schema-provider';
+import { TableConsumer, ITableConsumerRenderProps } from '@8base-react/table-schema-provider';
 import { TableSchema, SDKError, ERROR_CODES, PACKAGES } from '@8base/utils';
 
 import { RecordCrud } from './RecordCrud';
