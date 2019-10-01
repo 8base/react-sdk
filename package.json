@@ -11,7 +11,8 @@
     "prettier:check": "npm run prettier:base -- --list-different \"packages/*/{src,test}/**/*.{ts,tsx}\"",
     "prettier:write": "npm run prettier:base -- --write \"packages/*/{src,test}/**/*.{ts,tsx}\"",
     "bump": "lerna version --force-publish",
-    "upgrade-8base-packages": "yarn upgrade-interactive --scope @8base --latest"
+    "upgrade-8base-packages": "yarn upgrade-interactive --scope @8base --latest",
+    "package:new": "hygen package new"
   },
   "devDependencies": {
     "@types/enzyme": "^3.9.3",
@@ -20,6 +21,7 @@
     "@types/ramda": "^0.26.9",
     "@types/react": "^16.8.19",
     "@types/react-test-renderer": "^16.8.1",
+    "hygen": "^4.0.9",
     "lerna": "^3.16.4",
     "prettier": "^1.18.0",
     "rimraf": "^2.6.3",
