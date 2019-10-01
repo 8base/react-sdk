@@ -1,9 +1,9 @@
 import React from 'react';
 import { ISubscribableAuthClient } from '@8base/auth';
-import { AuthProvider } from '@8base/react-auth';
+import { AuthProvider } from '@8base-react/auth';
 import { ApolloContainer } from './ApolloContainer';
 import { ApolloContainerPassedProps } from './types';
-import { TableSchemaProvider } from '@8base/table-schema-provider';
+import { TableSchemaProvider } from '@8base-react/table-schema-provider';
 
 export type AppProviderProps = ApolloContainerPassedProps & {
   authClient?: ISubscribableAuthClient;

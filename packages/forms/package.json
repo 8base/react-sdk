@@ -1,5 +1,5 @@
 {
-  "name": "@8base/forms",
+  "name": "@8base-react/forms",
   "version": "0.37.2",
   "repository": "https://github.com/8base/react-sdk",
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/forms#readme",
@@ -18,11 +18,11 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
+    "@8base-react/permissions-provider": "^0.37.2",
+    "@8base-react/table-schema-provider": "^0.37.2",
     "@8base/error-codes": "^1.0.17",
-    "@8base/permissions-provider": "^0.37.2",
-    "@8base/table-schema-provider": "^0.37.2",
-    "@8base/utils": "^0.37.2",
-    "@8base/validate": "^0.37.2",
+    "@8base/utils": "^1.0.0",
+    "@8base/validate": "^1.0.0",
     "final-form": "^4.16.1",
     "final-form-arrays": "^1.1.2",
     "graphql-tag": "^2.10.0",

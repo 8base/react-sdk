@@ -1,8 +1,10 @@
+---
+to: packages/<%= name %>/package.json
+---
 {
-  "name": "@8base-react/table-schema-provider",
-  "version": "0.37.2",
+  "name": "@8base-react/<%= name %>",
+  "version": "<%= version %>",
   "repository": "https://github.com/8base/react-sdk",
-  "homepage": "https://github.com/8base/react-sdk/tree/master/packages/table-schema-provider#readme",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -10,30 +12,10 @@
     "watch": "../../bin/watch-package.sh",
     "test": "NPM_ENV=test jest"
   },
-  "peerDependencies": {
-    "apollo-client": "^2.6.3",
-    "graphql": "^14.0.0",
-    "react": "^16.8.6",
-    "react-apollo": "^3.1.0",
-    "react-dom": "^16.8.6"
-  },
-  "dependencies": {
-    "@8base-react/utils": "^0.37.2",
-    "@8base/utils": "^1.0.0",
-    "graphql-tag": "^2.10.0",
-    "ramda": "^0.26.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/graphql": "^14.2.0",
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "apollo-client": "^2.6.3",
-    "graphql": "^14.3.1",
     "jest": "24.7.1",
-    "react": "^16.8.6",
-    "react-apollo": "3.1.0",
-    "react-dom": "^16.8.6",
-    "react-test-renderer": "^16.8.6",
+    "jest-localstorage-mock": "^2.2.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
   },
@@ -43,6 +25,9 @@
         "tsConfig": "<rootDir>/tsconfig.json"
       }
     },
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ],
     "collectCoverageFrom": [
       "<rootDir>/src/**",
       "!<rootDir>/**/__tests__/**"

@@ -1,6 +1,6 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import { getDisplayName } from '@8base/utils';
+import { getDisplayName } from '@8base-react/utils';
 import { SubscribableDecorator } from '@8base/auth';
 
 import { AuthProvider, useAuth, WithAuthProps } from '../../src';

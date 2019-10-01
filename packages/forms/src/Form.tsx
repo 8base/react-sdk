@@ -12,8 +12,8 @@ import {
   tablesListSelectors,
 } from '@8base/utils';
 import errorCodes from '@8base/error-codes';
-import { TableSchemaContext, ITableSchemaContext } from '@8base/table-schema-provider';
-import { isAllowed, PermissionsContext } from '@8base/permissions-provider';
+import { TableSchemaContext, ITableSchemaContext } from '@8base-react/table-schema-provider';
+import { isAllowed, PermissionsContext } from '@8base-react/permissions-provider';
 
 import { FormContext } from './FormContext';
 import { FormProps, FormContextValue } from './types';

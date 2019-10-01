@@ -1,5 +1,5 @@
 {
-  "name": "@8base/file-input",
+  "name": "@8base-react/file-input",
   "version": "0.37.2",
   "repository": "https://github.com/8base/react-sdk",
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/file-input#readme",
