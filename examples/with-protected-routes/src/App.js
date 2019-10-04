@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppProvider } from '@8base/react-sdk';
+import { AppProvider } from '8base-react-sdk';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Routes } from './routes';

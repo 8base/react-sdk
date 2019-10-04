@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { AuthContext } from '@8base/react-sdk';
+import { useAuth } from '8base-react-sdk';
 
 const renderComponent = props => {
   const { render, children, component, ...rest } = props;
@@ -27,7 +27,7 @@ const renderComponent = props => {
 };
 
 const ProtectedRoute = (props) => {
-  const { isAuthorized } = useContext(AuthContext);
+  const { isAuthorized } = useAuth();
 
   const renderRoute = () => {
     if (isAuthorized) {

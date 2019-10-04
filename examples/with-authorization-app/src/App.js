@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { AppProvider, gql, withAuth } from '@8base/react-sdk';
+import { AppProvider, gql, useAuth } from '8base-react-sdk';
 import { Auth, AUTH_STRATEGIES } from '@8base/auth';
 import { withApollo, Query, } from 'react-apollo';
 import { compose } from 'recompose'; 
@@ -45,9 +45,9 @@ const authClient = Auth.createClient({
 });
 
 const Hello = compose(
-  withAuth,
   withApollo,
-)(({ auth, client }) => {
+)(({ client }) => {
+  const auth = useAuth();
   const logout = async () => {
     await client.clearStore();
 
@@ -78,27 +78,10 @@ const Hello = compose(
 // withAuth passes authorization state and utilities through auth prop.
 const Authorization = compose(
   withApollo,
-  withAuth,
-)(({ auth, client }) => {
-  if (auth.isAuthorized) {
-    return <Hello />;
-  }
-
-  const authorize = () => {
-    auth.authClient.authorize();
-  }
-
-  // Check if we didn't return from auth0
-  if (!document.location.hash.includes('access_token')) {
-    return (
-      <div>
-        <p>Hello guest!</p>
-        <button type="button" onClick={ authorize }>
-          Authorize
-        </button>
-      </div>
-    );
-  }
+)(({ client }) => {
+  const auth = useAuth();
+  const shouldProcessAuthorizationResult = !auth.isAuthorized &&
+    document.location.hash.includes('access_token');
 
   useEffect(() => {
     const processAuthorizationResult = async () => {
@@ -128,8 +111,30 @@ const Authorization = compose(
       });
     };
 
-    processAuthorizationResult();
-  });
+    if (shouldProcessAuthorizationResult) {
+      processAuthorizationResult();
+    }
+  }, [shouldProcessAuthorizationResult, auth, client]);
+
+  if (auth.isAuthorized) {
+    return <Hello />;
+  }
+
+  const authorize = () => {
+    auth.authClient.authorize();
+  }
+
+  // Check if we didn't return from auth0
+  if (!document.location.hash.includes('access_token')) {
+    return (
+      <div>
+        <p>Hello guest!</p>
+        <button type="button" onClick={ authorize }>
+          Authorize
+        </button>
+      </div>
+    );
+  }
 
   return <p>Authorizing...</p>
 });

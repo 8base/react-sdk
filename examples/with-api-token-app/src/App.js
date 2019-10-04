@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppProvider, gql } from '@8base/react-sdk';
+import { AppProvider, gql } from '8base-react-sdk';
 import { Auth, AUTH_STRATEGIES } from '@8base/auth';
 import { Query } from 'react-apollo';
 
