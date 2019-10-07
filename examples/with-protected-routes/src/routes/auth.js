@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { gql, withAuth } from '@8base/react-sdk';
+import { gql, useAuth } from '8base-react-sdk';
 import { withApollo } from 'react-apollo';
 import { Redirect } from 'react-router-dom';
 import { compose } from 'recompose'; 
@@ -24,7 +24,8 @@ const USER_SIGN_UP_MUTATION = gql`
   }
 `;
 
-let Auth = ({ auth, client }) => {
+let Auth = ({ client }) => {
+  const auth = useAuth();
   const [authorising, setAuthorizing] = useState(true);
 
   useEffect(() => {
@@ -71,6 +72,6 @@ let Auth = ({ auth, client }) => {
   return authorising ? null : <Redirect to="/" />;
 };
 
-Auth = compose(withApollo, withAuth)(Auth);
+Auth = compose(withApollo)(Auth);
 
 export { Auth };

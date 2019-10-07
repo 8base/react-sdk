@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "build-packages": "lerna run build",
+    "build-packages": "lerna run build --scope @8base-react/* --scope 8base-react-sdk",
     "link-packages": "./bin/link-packages.sh",
     "unlink-packages": "./bin/unlink-packages.sh",
     "test": "./bin/test.sh",
@@ -34,6 +34,7 @@
   },
   "version": "0.0.0",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ]
 }

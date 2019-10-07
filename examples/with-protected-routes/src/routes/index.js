@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
-import { AuthContext } from '@8base/react-sdk';
+import { useAuth } from '8base-react-sdk';
 import { withApollo } from 'react-apollo';
 
 import { ProtectedRoute } from '../ProtectedRoute';
@@ -9,7 +9,7 @@ import { Public } from './public';
 import { Protected } from './protected';
 
 let Routes = ({ client }) => {
-  const { isAuthorized, authClient } = useContext(AuthContext);
+  const { isAuthorized, authClient } = useAuth();
 
   const logout = async () => {
     await client.clearStore();
