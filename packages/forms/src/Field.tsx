@@ -30,7 +30,7 @@ const Field = (props: FieldProps<any, any>) => {
       if (typeof props.validate === 'function') {
         const { validate } = props;
         // @ts-ignore
-        props = R.assoc('validate', (...args: any) => validate(...args) || fieldValidate(...args), props);
+        props = R.assoc('validate', (...args: any) => validate(...args, fieldValidate), props);
       } else {
         props = R.assoc('validate', fieldValidate, props);
       }
