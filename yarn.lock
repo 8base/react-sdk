@@ -5811,10 +5811,10 @@ filesize@3.6.1:
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-3.6.1.tgz#090bb3ee01b6f801a8a8be99d31710b3422bb317"
   integrity sha512-7KjR1vv6qnicaPMi1iiTcI85CyYwRO/PSFCu6SvqL8jN2Wjt/NIYQTFtFs7fSDCYOstUkEWIQGFUg5YZQfjlcg==
 
-filestack-js@^3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/filestack-js/-/filestack-js-3.8.0.tgz#20dd16470546f69d18eed90439f786ba7e38b5f5"
-  integrity sha512-duYQ3ZYnT3LfV/2pJAWsXYcNCfBbciywZs3B5Iz8K3sDOsum9szgNFSj0MyaJEPNel5aiF5RF0x4RZVVJpjT4w==
+filestack-js@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/filestack-js/-/filestack-js-3.7.0.tgz#72bdec94a2136e601c50bc5e92815b585f851de2"
+  integrity sha512-ovOzree20lQhBjFJ+HrjMmReEYla3KZIIr94NdGyVSIG0D4vBl1JqGxyBq/zAfB7pNDQDSFNkLmyP254UAAlUA==
   dependencies:
     "@sentry/minimal" "^5.5.0"
     abab "^2.0.0"
