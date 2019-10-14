@@ -1,9 +1,9 @@
 {
   "name": "with-authorization-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "dependencies": {
-    "8base-react-sdk": "^1.1.0",
+    "8base-react-sdk": "^1.1.1",
     "@8base/auth": "^1.0.1",
     "apollo-client": "^2.6.3",
     "graphql": "^14.3.1",
