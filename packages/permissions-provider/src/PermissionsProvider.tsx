@@ -7,9 +7,9 @@ import { PermissionsContext } from './PermissionsContext';
 import { getPermissions } from './getPermissions';
 import { RequestPermissions } from './types';
 
-const USER_PERMISSIONS_QUERY = gql`
-  query UserPermissions {
-    user {
+const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
+  query TeamMemberPermissions {
+    teamMember {
       permissions {
         items {
           resource
@@ -67,7 +67,7 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
       } = this.props;
 
       return (
-        <Query query={USER_PERMISSIONS_QUERY} skip={!isAuthorized || !authState.workspaceId} {...rest}>
+        <Query query={TEAM_MEMBER_PERMISSIONS_QUERY} skip={!isAuthorized || !authState.workspaceId} {...rest}>
           {this.renderContent}
         </Query>
       );
