@@ -11,7 +11,7 @@ import {
 } from '../../src';
 
 const mockPermissionsData = {
-  user: {
+  teamMember: {
     permissions: {
       items: [
         {
