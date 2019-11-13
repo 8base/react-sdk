@@ -3,37 +3,7 @@ import { withApollo, WithApolloClient } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import * as filestack from 'filestack-js';
 import gql from 'graphql-tag';
-
-type FileValue = {
-  fileId: string;
-  filename: string;
-  id?: string;
-  downloadUrl?: string;
-};
-
-type FileInputValue = FileValue | FileValue[];
-type OriginalFileInputValue = File | File[];
-
-type FileInputProps = {
-  onChange?: (value: FileInputValue, originalFile: OriginalFileInputValue) => void;
-  children: (args: {
-    pick: (options: {}) => Promise<void>;
-    value: FileInputValue | null;
-    originalFile: OriginalFileInputValue | null;
-    error: object | null;
-  }) => React.ReactNode;
-  public?: boolean;
-  maxFiles?: number;
-  onUploadDone?: (value: FileInputValue, originalFile?: OriginalFileInputValue) => Promise<FileInputValue>;
-  value?: FileInputValue | null;
-};
-
-type FileInputState = {
-  path: string | null;
-  error: object | null;
-  value: FileInputValue | null;
-  originalFile: OriginalFileInputValue | null;
-};
+import { FileInputProps, FileInputState } from './types';
 
 const FILE_UPLOAD_INFO_QUERY = gql`
   query FileUploadInfo {
