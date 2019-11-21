@@ -11,7 +11,7 @@ import { ApolloClient } from '@8base/apollo-client';
 import { ApolloContainerPassedProps } from './types';
 import { FragmentsSchemaContainer } from './FragmentsSchemaContainer';
 
-type ApolloContainerProps = ApolloContainerPassedProps & {
+export type ApolloContainerProps = ApolloContainerPassedProps & {
   withAuth: boolean;
   children: React.ReactNode;
 };
@@ -24,6 +24,7 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
       autoSignUp: false,
       withAuth: true,
       withSubscriptions: false,
+      cacheOptions: {},
     };
     public client: any;
 
@@ -35,16 +36,18 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
           withSubscriptions,
           autoSignUp,
           authProfileId,
+          cacheOptions,
         } = this.props;
 
         const commonOptions = {
           cache: introspectionQueryResultData
             ? new InMemoryCache({
+                ...cacheOptions,
                 fragmentMatcher: new IntrospectionFragmentMatcher({
                   introspectionQueryResultData,
                 }),
               })
-            : new InMemoryCache(),
+            : new InMemoryCache(cacheOptions),
           extendLinks: this.props.extendLinks,
           onRequestError: this.props.onRequestError,
           onRequestSuccess: this.props.onRequestSuccess,
