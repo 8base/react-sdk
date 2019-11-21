@@ -1,9 +1,10 @@
 import React from 'react';
 import { ISubscribableAuthClient } from '@8base/auth';
 import { AuthProvider } from '@8base-react/auth';
-import { ApolloContainer } from './ApolloContainer';
+import { ApolloContainer, ApolloContainerProps } from './ApolloContainer';
 import { ApolloContainerPassedProps } from './types';
 import { TableSchemaProvider } from '@8base-react/table-schema-provider';
+import { Optional } from 'utility-types';
 
 export type AppProviderProps = ApolloContainerPassedProps & {
   authClient?: ISubscribableAuthClient;
@@ -11,6 +12,16 @@ export type AppProviderProps = ApolloContainerPassedProps & {
     | React.ReactNode
     | ((renderProps: { loading: boolean }) => React.ReactNode);
 };
+
+type PrefilledApolloContainerProps =
+  | 'withSubscriptions'
+  | 'uri'
+  | 'extendLinks'
+  | 'onRequestSuccess'
+  | 'onRequestError'
+  | 'introspectionQueryResultData'
+  | 'cacheOptions'
+  | 'children';
 
 /**
  * `AppProvider` universal provider which loads fragments schema and provides Apollo client with it, authentication and table schema.
@@ -22,6 +33,7 @@ export type AppProviderProps = ApolloContainerPassedProps & {
  * @prop {Function|React.ReactNode} [children] - The render function or React nodes.
  * @prop {Object} [introspectionQueryResultData] - The fragment type for introspection fragments matcher.
  * @prop {Object} [tablesList] - The schema of the 8base tables.
+ * @prop {Object} [cacheOptions] - Apollo InMemoryCache options.
  */
 const AppProvider = ({
   uri,
@@ -36,37 +48,23 @@ const AppProvider = ({
   tablesList,
   applicationsList,
   withSubscriptions,
-}: AppProviderProps): any =>
-  !!authClient ? (
-    <AuthProvider authClient={authClient}>
-      <ApolloContainer
-        withAuth={true}
-        withSubscriptions={withSubscriptions}
-        uri={uri}
-        extendLinks={extendLinks}
-        onRequestSuccess={onRequestSuccess}
-        onRequestError={onRequestError}
-        autoSignUp={autoSignUp}
-        authProfileId={authProfileId}
-        introspectionQueryResultData={introspectionQueryResultData}
-      >
-        <TableSchemaProvider
-          tablesList={tablesList}
-          applicationsList={applicationsList}
-        >
-          {children}
-        </TableSchemaProvider>
-      </ApolloContainer>
-    </AuthProvider>
-  ) : (
+  cacheOptions,
+}: AppProviderProps): any => {
+  const renderApolloContainer = (
+    apolloContainerProps: Optional<
+      ApolloContainerProps,
+      PrefilledApolloContainerProps
+    >,
+  ) => (
     <ApolloContainer
-      withAuth={false}
       withSubscriptions={withSubscriptions}
       uri={uri}
       extendLinks={extendLinks}
       onRequestSuccess={onRequestSuccess}
       onRequestError={onRequestError}
       introspectionQueryResultData={introspectionQueryResultData}
+      cacheOptions={cacheOptions}
+      {...apolloContainerProps}
     >
       <TableSchemaProvider
         tablesList={tablesList}
@@ -76,5 +74,18 @@ const AppProvider = ({
       </TableSchemaProvider>
     </ApolloContainer>
   );
+
+  return !!authClient ? (
+    <AuthProvider authClient={authClient}>
+      {renderApolloContainer({
+        withAuth: true,
+        autoSignUp,
+        authProfileId,
+      })}
+    </AuthProvider>
+  ) : (
+    renderApolloContainer({ withAuth: false })
+  );
+};
 
 export { AppProvider };

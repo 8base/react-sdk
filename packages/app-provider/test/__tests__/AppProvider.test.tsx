@@ -184,4 +184,47 @@ describe('AppProvider', () => {
       }
     `);
   });
+
+  it('should pass `cacheOptions` to apollo cache', () => {
+    const uri = 'http://8base.com';
+    const onRequestError = jest.fn();
+    const onRequestSuccess = jest.fn();
+    const cacheOptions = {
+      cacheRedirects: {
+        Query: {
+          test: jest.fn(),
+        },
+      },
+    };
+
+    mount(
+      <AppProvider
+        uri={uri}
+        onRequestError={onRequestError}
+        onRequestSuccess={onRequestSuccess}
+        cacheOptions={cacheOptions}
+      >
+        {() => <div />}
+      </AppProvider>,
+    );
+
+    const { cache } = (ApolloClient as any).mock.calls[0][0];
+
+    expect(ApolloClient).toHaveBeenCalled();
+
+    expect(cache.config).toMatchInlineSnapshot(`
+      Object {
+        "addTypename": true,
+        "cacheRedirects": Object {
+          "Query": Object {
+            "test": [MockFunction],
+          },
+        },
+        "dataIdFromObject": [Function],
+        "fragmentMatcher": HeuristicFragmentMatcher {},
+        "freezeResults": false,
+        "resultCaching": true,
+      }
+    `);
+  });
 });

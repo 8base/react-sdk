@@ -1,4 +1,5 @@
 import { ApolloLink } from 'apollo-link';
+import { InMemoryCacheConfig } from 'apollo-cache-inmemory';
 import { IAuthState, TableSchema, Application } from '@8base/utils';
 
 export type ApolloContainerPassedProps = {
@@ -15,4 +16,5 @@ export type ApolloContainerPassedProps = {
   introspectionQueryResultData?: Object;
   tablesList?: TableSchema[];
   applicationsList?: Application[];
+  cacheOptions?: InMemoryCacheConfig;
 };
