@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { Query, QueryResult } from 'react-apollo';
 import { TableConsumer, ITableConsumerRenderProps } from '@8base-react/table-schema-provider';
 import { PermissionsContext } from '@8base-react/permissions-provider';
-import { createTableFilterGraphqlTag, TableSchema, SDKError, ERROR_CODES, PACKAGES } from '@8base/utils';
+import { createTableFilterGraphqlTag, TableSchema, FieldSchema, SDKError, ERROR_CODES, PACKAGES } from '@8base/utils';
 
 type RecordsListFlattenData<T = object> = {
   items: T[];
@@ -20,6 +20,7 @@ type RecordsListProps = {
   children: (recordsListResult: QueryResult<RecordsListFlattenData>) => JSX.Element;
   deep?: number;
   relationItemsCount?: number;
+  filterFields?: (field: FieldSchema) => boolean;
 };
 
 /**
@@ -68,7 +69,7 @@ export class RecordsList extends Component<RecordsListProps> {
   };
 
   public renderQuery = ({ tableSchema, loading }: ITableConsumerRenderProps) => {
-    const { children, deep, relationItemsCount, ...rest } = this.props;
+    const { children, deep, relationItemsCount, filterFields, ...rest } = this.props;
 
     if (!tableSchema && !loading) {
       throw new SDKError(ERROR_CODES.TABLE_NOT_FOUND, PACKAGES.CRUD, `Table doesn't find`);
@@ -85,6 +86,7 @@ export class RecordsList extends Component<RecordsListProps> {
         tableContentName: 'tableContent',
         appContentName: 'appContent',
         permissions: this.context,
+        filterFields,
       }),
     );
 
