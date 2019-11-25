@@ -19,7 +19,7 @@ type FormContextValue = {
   loading?: boolean;
 };
 
-type FormProps = {
+type FormProps<FormValues = any> = {
   tableSchemaName?: string;
   appName?: string;
   type?: 'CREATE' | 'UPDATE';
@@ -27,7 +27,7 @@ type FormProps = {
   formatRelationToIds?: boolean;
   permissions?: any;
   onSuccess?: (result: any, form: FormApi) => void;
-} & FinalFormProps;
+} & FinalFormProps<FormValues>;
 
 type FieldsetProps = {
   tableSchemaName?: string;
