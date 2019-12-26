@@ -71,7 +71,15 @@ describe('should call onChange when file is uploaded', () => {
     const originalFile = new File([''], 'filename');
 
     await mockOnUploadDone({
-      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle', mimeType: 'application/pdf' }],
+      filesUploaded: [
+        {
+          handle: 'handle',
+          filename: 'filename',
+          originalFile,
+          url: 'https://url.com/handle',
+          mimeType: 'application/pdf',
+        },
+      ],
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -105,7 +113,15 @@ describe('should call onChange when file is uploaded', () => {
     const originalFile = new File([''], 'filename');
 
     await mockOnUploadDone({
-      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle', mimeType: 'application/pdf' }],
+      filesUploaded: [
+        {
+          handle: 'handle',
+          filename: 'filename',
+          originalFile,
+          url: 'https://url.com/handle',
+          mimeType: 'application/pdf',
+        },
+      ],
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
