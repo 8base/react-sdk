@@ -77,7 +77,7 @@ describe('should call onChange when file is uploaded', () => {
           filename: 'filename',
           originalFile,
           url: 'https://url.com/handle',
-          mimeType: 'application/pdf',
+          mimetype: 'application/pdf',
         },
       ],
     });
@@ -88,7 +88,7 @@ describe('should call onChange when file is uploaded', () => {
       filename: 'filename',
       public: false,
       downloadUrl: 'https://url.com/security=p:policy-key,s:signature-key/handle',
-      mimeType: 'application/pdf',
+      mimetype: 'application/pdf',
     });
     expect(onChange.mock.calls[0][1]).toEqual(originalFile);
   });
@@ -119,7 +119,7 @@ describe('should call onChange when file is uploaded', () => {
           filename: 'filename',
           originalFile,
           url: 'https://url.com/handle',
-          mimeType: 'application/pdf',
+          mimetype: 'application/pdf',
         },
       ],
     });
@@ -130,7 +130,7 @@ describe('should call onChange when file is uploaded', () => {
       filename: 'filename',
       public: true,
       downloadUrl: 'https://url.com/security=p:policy-key,s:signature-key/handle',
-      mimeType: 'application/pdf',
+      mimetype: 'application/pdf',
     });
     expect(onChange.mock.calls[0][1]).toEqual(originalFile);
   });
