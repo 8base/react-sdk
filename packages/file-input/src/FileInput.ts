@@ -84,13 +84,14 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
 
       const { policy = '""', signature = '""' } = this.filestack.session;
 
-      let value = filesUploaded.map(({ handle, filename, url }: any) => {
+      let value = filesUploaded.map(({ handle, filename, url, mimeType }: any) => {
         const urlOrigin = url ? new URL(url).origin : '';
 
         return {
           downloadUrl: `${urlOrigin}/security=p:${policy},s:${signature}/${handle}`,
           fileId: handle,
           filename,
+          mimeType,
           public: !!this.props.public,
         };
       });
