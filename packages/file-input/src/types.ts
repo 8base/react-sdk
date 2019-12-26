@@ -3,7 +3,7 @@ export type FileValue = {
   filename: string;
   id?: string;
   downloadUrl?: string;
-  mimeType: string;
+  mimetype?: string;
 };
 
 export type FileInputValue = FileValue | FileValue[];
