@@ -71,7 +71,7 @@ describe('should call onChange when file is uploaded', () => {
     const originalFile = new File([''], 'filename');
 
     await mockOnUploadDone({
-      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle' }],
+      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle', mimeType: 'application/pdf' }],
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -80,6 +80,7 @@ describe('should call onChange when file is uploaded', () => {
       filename: 'filename',
       public: false,
       downloadUrl: 'https://url.com/security=p:policy-key,s:signature-key/handle',
+      mimeType: 'application/pdf',
     });
     expect(onChange.mock.calls[0][1]).toEqual(originalFile);
   });
@@ -104,7 +105,7 @@ describe('should call onChange when file is uploaded', () => {
     const originalFile = new File([''], 'filename');
 
     await mockOnUploadDone({
-      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle' }],
+      filesUploaded: [{ handle: 'handle', filename: 'filename', originalFile, url: 'https://url.com/handle', mimeType: 'application/pdf' }],
     });
 
     expect(onChange).toHaveBeenCalledTimes(1);
@@ -113,6 +114,7 @@ describe('should call onChange when file is uploaded', () => {
       filename: 'filename',
       public: true,
       downloadUrl: 'https://url.com/security=p:policy-key,s:signature-key/handle',
+      mimeType: 'application/pdf',
     });
     expect(onChange.mock.calls[0][1]).toEqual(originalFile);
   });
