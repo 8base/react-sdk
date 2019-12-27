@@ -3,7 +3,6 @@ import * as R from 'ramda';
 import { FORM_ERROR } from 'final-form';
 import { Form as FinalForm } from 'react-final-form';
 import arrayMutators from 'final-form-arrays';
-import { FormProps as FinalFormProps } from 'react-final-form';
 import {
   formatDataForMutation,
   formatDataAfterQuery,
@@ -12,11 +11,11 @@ import {
   tablesListSelectors,
 } from '@8base/utils';
 import errorCodes from '@8base/error-codes';
-import { TableSchemaContext, ITableSchemaContext } from '@8base-react/table-schema-provider';
+import { TableSchemaContext } from '@8base-react/table-schema-provider';
 import { isAllowed, PermissionsContext } from '@8base-react/permissions-provider';
 
 import { FormContext } from './FormContext';
-import { FormProps, FormContextValue } from './types';
+import { FormProps } from './types';
 
 /**
  * `Form` wrapper based on `Form` from the [`react-final-form`](https://github.com/final-form/react-final-form). That accept [`FormProps`](https://github.com/final-form/react-final-form#formprops) props and some extra props for easy working with 8base API.
@@ -90,6 +89,7 @@ const Form = ({
                   {
                     tableName: tableSchema.name,
                     schema: tablesList,
+                    initialData: props.initialValues,
                   },
                   {
                     ignoreNonTableFields,
