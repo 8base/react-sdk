@@ -1,6 +1,9 @@
 import React from 'react';
-import { TransformedPermissions } from './types';
+import { PermissionsContextValue } from './types';
 
-const PermissionsContext = React.createContext<TransformedPermissions>({});
+const PermissionsContext = React.createContext<PermissionsContextValue>({
+  permissions: {},
+  roles: [],
+});
 
 export { PermissionsContext };

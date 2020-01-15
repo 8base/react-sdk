@@ -161,31 +161,6 @@ it('As a developer, I can use `IfAllowed` in order to check fields permissions i
   expect(tree.toJSON()).toMatchInlineSnapshot('"Allowed = true, allowed to change email = false"');
 });
 
-// TODO this.context is an empty object so the test passes incorrectly
-it('As a developer, I can use `isAllowed` for check access via context.', () => {
-  class TestComponent extends React.Component<any> {
-    public static contextType = PermissionsContext;
-
-    public render() {
-      const allowed = isAllowed(
-        {
-          resource: 'schema',
-          type: 'custom',
-          permission: 'edit',
-        },
-        // @ts-ignore
-        this.context,
-      );
-
-      return `Allowed = ${allowed}`;
-    }
-  }
-
-  const tree = renderer.create(<PermissionsProvider>{() => <TestComponent />}</PermissionsProvider>);
-
-  expect(tree.toJSON()).toMatchInlineSnapshot('"Allowed = false"');
-});
-
 it('As a developer, I can use `isAllowed` for check field access via context.', () => {
   const TestComponent = ({ permissions }: any) => {
     const allowed = isAllowed(

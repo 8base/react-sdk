@@ -85,7 +85,7 @@ export class RecordsList extends Component<RecordsListProps> {
         relationItemsCount,
         tableContentName: 'tableContent',
         appContentName: 'appContent',
-        permissions: this.context,
+        permissions: this.context.permissions,
         filterFields,
       }),
     );

@@ -16,7 +16,7 @@ const withPermissions = <T extends WithPermissionsProps>(WrappedComponent: React
     public render() {
       return (
         <PermissionsContext.Consumer>
-          {permissions => <WrappedComponent {...(this.props as T)} permissions={permissions} />}
+          {({ permissions }) => <WrappedComponent {...(this.props as T)} permissions={permissions} />}
         </PermissionsContext.Consumer>
       );
     }

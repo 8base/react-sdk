@@ -1,43 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as R from 'ramda';
 
 import { PermissionsContext } from './PermissionsContext';
 import { isAllowed } from './isAllowed';
-import { TransformedPermissions } from './types';
+import { PermissionsContextValue } from './types';
 
 type IfAllowedProps = {
   permissions: string[][];
   children: React.ReactNode;
 };
 
-class IfAllowed extends React.Component<IfAllowedProps> {
-  public renderContent = (userPermissions: TransformedPermissions) => {
-    const { children, permissions } = this.props;
+const IfAllowed = ({ children, permissions }: IfAllowedProps) => {
+  const context: PermissionsContextValue = useContext(PermissionsContext);
 
-    const result = permissions.map(([type, resource, permission]) => ({
-      allowed: isAllowed(
-        {
-          permission,
-          resource,
-          type,
-        },
-        userPermissions,
-      ),
-      fields: R.pathOr({}, [type, resource, 'permission', permission, 'fields'], userPermissions),
-    }));
+  let allowed = true;
+  let result;
 
-    const allowed = R.all(R.propEq('allowed', true), result);
+  result = permissions.map(([type, resource, permission]) => ({
+    allowed: isAllowed(
+      {
+        permission,
+        resource,
+        type,
+      },
+      context.permissions,
+    ),
+    fields: R.pathOr({}, [type, resource, 'permission', permission, 'fields'], context.permissions),
+  }));
 
-    if (typeof children === 'function') {
-      return children(allowed, result);
-    }
+  allowed = R.all(R.propEq('allowed', true), result);
 
-    return allowed ? children : null;
-  };
-
-  public render() {
-    return <PermissionsContext.Consumer>{this.renderContent}</PermissionsContext.Consumer>;
+  if (typeof children === 'function') {
+    return children(allowed, result);
   }
-}
+
+  return allowed ? children : null;
+};
 
 export { IfAllowed };

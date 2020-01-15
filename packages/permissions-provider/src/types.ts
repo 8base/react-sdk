@@ -32,3 +32,8 @@ export type RequestPermissions = {
     };
   };
 };
+
+export type PermissionsContextValue = {
+  roles: string[];
+  permissions: TransformedPermissions;
+};
