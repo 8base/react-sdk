@@ -1,11 +1,32 @@
 import React from 'react';
 import gql from 'graphql-tag';
+import * as R from 'ramda';
 import { Query } from 'react-apollo';
 import { withAuth, WithAuthProps } from '@8base-react/auth';
 
 import { PermissionsContext } from './PermissionsContext';
 import { getPermissions } from './getPermissions';
 import { RequestPermissions } from './types';
+
+const USER_PERMISSIONS_QUERY = gql`
+  query UserPermissions {
+    user {
+      permissions {
+        items {
+          resource
+          resourceType
+          permission
+        }
+      }
+      roles {
+        items {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
 
 const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
   query TeamMemberPermissions {
@@ -17,11 +38,19 @@ const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
           permission
         }
       }
+      roles {
+        items {
+          id
+          name
+        }
+      }
     }
   }
 `;
 
-type PermissionsProviderCommonProps = {};
+type PermissionsProviderCommonProps = {
+  type?: 'teamMember' | 'user';
+};
 
 type PermissionsProviderProps =
   | ({
@@ -48,12 +77,17 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
     };
 
     public renderContent = ({ data, loading }: { data: RequestPermissions; loading: boolean }) => {
-      const { children } = this.props;
+      const { children, type = 'teamMember' } = this.props;
 
-      const permissions = getPermissions(data);
+      const permissions = getPermissions(data, type);
+
+      const roles = R.pipe(
+        R.pathOr([], [type, 'roles', 'items']),
+        R.map(({ name }) => name),
+      )(data);
 
       return (
-        <PermissionsContext.Provider value={permissions}>
+        <PermissionsContext.Provider value={{ permissions, roles }}>
           {this.renderChildren({ loading })}
         </PermissionsContext.Provider>
       );
@@ -63,11 +97,16 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
       const {
         auth: { isAuthorized, authState },
         children,
+        type,
         ...rest
       } = this.props;
 
       return (
-        <Query query={TEAM_MEMBER_PERMISSIONS_QUERY} skip={!isAuthorized || !authState.workspaceId} {...rest}>
+        <Query
+          query={type === 'user' ? USER_PERMISSIONS_QUERY : TEAM_MEMBER_PERMISSIONS_QUERY}
+          skip={!isAuthorized || !authState.workspaceId}
+          {...rest}
+        >
           {this.renderContent}
         </Query>
       );

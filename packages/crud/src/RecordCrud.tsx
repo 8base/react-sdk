@@ -43,7 +43,7 @@ export class RecordCrud extends Component<RecordCrudProps> {
     const { tableSchema, children, mode, includeColumns, ...rest } = this.props;
     const mutation = gql(
       createRecordTag(tableSchema, mode, {
-        permissions: this.context,
+        permissions: this.context.permissions,
         includeColumns: includeColumns || null,
       }),
     );

@@ -33,7 +33,7 @@ const Form = ({
   ...props
 }: FormProps) => {
   const { tablesList, loading } = useContext(TableSchemaContext);
-  const permissions = useContext(PermissionsContext);
+  const { permissions } = useContext(PermissionsContext);
 
   let tableSchema: any = null;
 
