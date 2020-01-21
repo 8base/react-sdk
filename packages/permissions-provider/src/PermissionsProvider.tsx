@@ -11,6 +11,7 @@ import { RequestPermissions } from './types';
 const USER_PERMISSIONS_QUERY = gql`
   query UserPermissions {
     user {
+      id
       permissions {
         items {
           resource
@@ -31,6 +32,7 @@ const USER_PERMISSIONS_QUERY = gql`
 const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
   query TeamMemberPermissions {
     teamMember {
+      id
       permissions {
         items {
           resource
