@@ -89,6 +89,7 @@ export const TABLE_FIELD_FRAGMENT = gql`
     minValue
     maxValue
     isBigInt
+    autoIncrement
   }
 
   fragment FileFieldTypeAttributes on FileFieldTypeAttributes {
