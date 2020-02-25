@@ -1,9 +1,9 @@
 {
   "name": "with-protected-routes",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "private": true,
   "dependencies": {
-    "8base-react-sdk": "^1.4.3",
+    "8base-react-sdk": "^1.4.4",
     "@8base/auth": "^1.2.2",
     "apollo-client": "^2.6.3",
     "graphql": "^14.3.1",
