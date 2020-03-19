@@ -71,6 +71,8 @@ export const TABLE_FIELD_FRAGMENT = gql`
       create
       update
     }
+    computedMode
+    expression
   }
 
   fragment DateFieldTypeAttributes on DateFieldTypeAttributes {
