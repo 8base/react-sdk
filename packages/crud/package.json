@@ -20,7 +20,7 @@
     "@8base-react/permissions-provider": "^1.4.6",
     "@8base-react/table-schema-provider": "^1.4.6",
     "@8base/schema-name-generator": "^0.1.14",
-    "@8base/utils": "^1.2.4",
+    "@8base/utils": "^1.2.5",
     "graphql-tag": "^2.10.0",
     "ramda": "^0.26.1"
   },
