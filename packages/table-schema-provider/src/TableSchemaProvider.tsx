@@ -152,6 +152,9 @@ export const TABLE_FRAGMENT = gql`
     fields {
       ...TableFieldFragment
     }
+    attributes {
+      ...TableAttributesFragment
+    }
     schemaFeatures {
       create {
         DATE
@@ -174,6 +177,14 @@ export const TABLE_FRAGMENT = gql`
       update
       delete
     }
+  }
+
+  fragment TableAttributesFragment on TableAttributes {
+    ...TableViewAttributesFragment
+  }
+
+  fragment TableViewAttributesFragment on ViewAttributes {
+    query
   }
 
   ${TABLE_FIELD_FRAGMENT}
