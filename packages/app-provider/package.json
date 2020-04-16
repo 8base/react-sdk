@@ -1,6 +1,6 @@
 {
   "name": "@8base-react/app-provider",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "repository": "https://github.com/8base/react-sdk",
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/app-provider#readme",
   "main": "dist/index.js",
@@ -18,8 +18,8 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@8base-react/auth": "^1.4.8",
-    "@8base-react/table-schema-provider": "^1.4.8",
+    "@8base-react/auth": "^1.4.9",
+    "@8base-react/table-schema-provider": "^1.4.9",
     "@8base/apollo-client": "^1.2.5",
     "@8base/auth": "^1.2.5",
     "@8base/error-codes": "^1.0.21",
