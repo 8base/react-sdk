@@ -136,6 +136,7 @@ export const TABLE_FRAGMENT = gql`
     id
     name
     displayName
+    description
     application {
       id
       name
@@ -143,6 +144,16 @@ export const TABLE_FRAGMENT = gql`
       description
       status
       appType
+    }
+    indexes {
+      id
+      type
+      columns {
+        name
+        direction
+      }
+      name
+      isSystem
     }
     origin {
       type
