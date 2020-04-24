@@ -150,7 +150,6 @@ export const TABLE_FRAGMENT = gql`
       type
       columns {
         name
-        direction
       }
       name
       isSystem
