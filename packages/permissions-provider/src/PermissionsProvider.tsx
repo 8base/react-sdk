@@ -1,4 +1,5 @@
 import React from 'react';
+import { DocumentNode } from 'graphql';
 import gql from 'graphql-tag';
 import * as R from 'ramda';
 import { Query } from 'react-apollo';
@@ -52,6 +53,7 @@ const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
 
 type PermissionsProviderCommonProps = {
   type?: 'teamMember' | 'user';
+  customQuery?: DocumentNode;
 };
 
 type PermissionsProviderProps =
@@ -79,7 +81,7 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
     };
 
     public renderContent = ({ data, loading }: { data: RequestPermissions; loading: boolean }) => {
-      const { children, type = 'teamMember' } = this.props;
+      const { type = 'teamMember' } = this.props;
 
       const permissions = getPermissions(data, type);
 
@@ -100,12 +102,13 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
         auth: { isAuthorized, authState },
         children,
         type,
+        customQuery,
         ...rest
       } = this.props;
 
       return (
         <Query
-          query={type === 'user' ? USER_PERMISSIONS_QUERY : TEAM_MEMBER_PERMISSIONS_QUERY}
+          query={customQuery || (type === 'user' ? USER_PERMISSIONS_QUERY : TEAM_MEMBER_PERMISSIONS_QUERY)}
           skip={!isAuthorized || !authState.workspaceId}
           {...rest}
         >
