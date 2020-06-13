@@ -243,7 +243,7 @@ type TableSchemaProviderProps =
       children: React.ReactNode;
     } & TableSchemaProviderCommonProps)
   | ({
-      children: (props: { loading: boolean }) => React.ReactNode;
+      children: (props: { loading: boolean; error?: any }) => React.ReactNode;
     } & TableSchemaProviderCommonProps);
 
 /**
@@ -251,7 +251,7 @@ type TableSchemaProviderProps =
  * @property {Function} children Children of the provider. Could be either react node or function with loading state.
  */
 class TableSchemaProvider extends React.Component<TableSchemaProviderProps> {
-  public renderChildren = (args: { loading: boolean }) => {
+  public renderChildren = (args: { loading: boolean; error?: any }) => {
     const { children } = this.props;
 
     if (typeof children === 'function') {
@@ -261,16 +261,19 @@ class TableSchemaProvider extends React.Component<TableSchemaProviderProps> {
     return children;
   };
 
-  public renderContent = ({ data, loading }: { data?: any; loading: boolean } = { loading: false }) => {
+  public renderContent = (
+    { data, loading, error }: { data?: any; loading: boolean; error?: any } = { loading: false },
+  ) => {
     return (
       <TableSchemaContext.Provider
         value={{
           tablesList: R.pathOr([], ['tablesList', 'items'], data),
           applicationsList: R.pathOr([], ['applicationsList', 'items'], data),
           loading,
+          error,
         }}
       >
-        {this.renderChildren({ loading })}
+        {this.renderChildren({ loading, error })}
       </TableSchemaContext.Provider>
     );
   };

@@ -5,6 +5,7 @@ export interface ITableSchemaContext {
   tablesList: TableSchema[];
   applicationsList: Application[];
   loading: boolean;
+  error?: any;
 }
 
 const TableSchemaContext = React.createContext<ITableSchemaContext>({
