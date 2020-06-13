@@ -10,7 +10,7 @@ export type AppProviderProps = ApolloContainerPassedProps & {
   authClient?: ISubscribableAuthClient;
   children:
     | React.ReactNode
-    | ((renderProps: { loading: boolean }) => React.ReactNode);
+    | ((renderProps: { loading: boolean; error?: any }) => React.ReactNode);
 };
 
 type PrefilledApolloContainerProps =
