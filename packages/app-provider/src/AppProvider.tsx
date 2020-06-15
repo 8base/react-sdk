@@ -1,6 +1,7 @@
 import React from 'react';
 import { ISubscribableAuthClient } from '@8base/auth';
 import { AuthProvider } from '@8base-react/auth';
+import { ApolloError } from 'apollo-client';
 import { ApolloContainer, ApolloContainerProps } from './ApolloContainer';
 import { ApolloContainerPassedProps } from './types';
 import { TableSchemaProvider } from '@8base-react/table-schema-provider';
@@ -10,7 +11,10 @@ export type AppProviderProps = ApolloContainerPassedProps & {
   authClient?: ISubscribableAuthClient;
   children:
     | React.ReactNode
-    | ((renderProps: { loading: boolean }) => React.ReactNode);
+    | ((renderProps: {
+        loading: boolean;
+        error?: ApolloError;
+      }) => React.ReactNode);
 };
 
 type PrefilledApolloContainerProps =
