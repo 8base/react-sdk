@@ -2,6 +2,7 @@ import React from 'react';
 import * as R from 'ramda';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import { ApolloError } from 'apollo-client';
 import { TableSchema, Application } from '@8base/utils';
 
 import { TableSchemaContext } from './TableSchemaContext';
@@ -243,7 +244,7 @@ type TableSchemaProviderProps =
       children: React.ReactNode;
     } & TableSchemaProviderCommonProps)
   | ({
-      children: (props: { loading: boolean; error?: any }) => React.ReactNode;
+      children: (props: { loading: boolean; error?: ApolloError }) => React.ReactNode;
     } & TableSchemaProviderCommonProps);
 
 /**
@@ -251,7 +252,7 @@ type TableSchemaProviderProps =
  * @property {Function} children Children of the provider. Could be either react node or function with loading state.
  */
 class TableSchemaProvider extends React.Component<TableSchemaProviderProps> {
-  public renderChildren = (args: { loading: boolean; error?: any }) => {
+  public renderChildren = (args: { loading: boolean; error?: ApolloError }) => {
     const { children } = this.props;
 
     if (typeof children === 'function') {
@@ -262,7 +263,7 @@ class TableSchemaProvider extends React.Component<TableSchemaProviderProps> {
   };
 
   public renderContent = (
-    { data, loading, error }: { data?: any; loading: boolean; error?: any } = { loading: false },
+    { data, loading, error }: { data?: any; loading: boolean; error?: ApolloError } = { loading: false },
   ) => {
     return (
       <TableSchemaContext.Provider

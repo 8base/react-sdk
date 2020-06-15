@@ -1,11 +1,12 @@
 import React from 'react';
 import { TableSchema, Application } from '@8base/utils';
+import { ApolloError } from 'apollo-client';
 
 export interface ITableSchemaContext {
   tablesList: TableSchema[];
   applicationsList: Application[];
   loading: boolean;
-  error?: any;
+  error?: ApolloError;
 }
 
 const TableSchemaContext = React.createContext<ITableSchemaContext>({
