@@ -1,6 +1,6 @@
 {
   "name": "@8base-react/crud",
-  "version": "1.4.12",
+  "version": "1.4.13",
   "repository": "https://github.com/8base/react-sdk",
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/crud#readme",
   "main": "dist/index.js",
@@ -17,8 +17,8 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@8base-react/permissions-provider": "^1.4.12",
-    "@8base-react/table-schema-provider": "^1.4.12",
+    "@8base-react/permissions-provider": "^1.4.13",
+    "@8base-react/table-schema-provider": "^1.4.13",
     "@8base/schema-name-generator": "^0.1.16",
     "@8base/utils": "^1.2.6",
     "graphql-tag": "^2.10.0",
