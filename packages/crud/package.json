@@ -19,8 +19,8 @@
   "dependencies": {
     "@8base-react/permissions-provider": "^1.4.12",
     "@8base-react/table-schema-provider": "^1.4.12",
-    "@8base/schema-name-generator": "^0.1.14",
-    "@8base/utils": "^1.2.5",
+    "@8base/schema-name-generator": "^0.1.16",
+    "@8base/utils": "^1.2.6",
     "graphql-tag": "^2.10.0",
     "ramda": "^0.26.1"
   },
