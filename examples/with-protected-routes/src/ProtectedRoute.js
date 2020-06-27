@@ -37,7 +37,7 @@ const ProtectedRoute = (props) => {
     return <Redirect to={{ pathname: '/auth' }} />;
   };
 
-  const { component, render, ...routeProps } = props;
+  const { component, render, children, ...routeProps } = props;
 
   return <Route {...routeProps} render={renderRoute} />;
 };
