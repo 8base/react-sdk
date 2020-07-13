@@ -18,6 +18,7 @@ export const TABLE_FIELD_FRAGMENT = gql`
       ...SwitchFieldTypeAttributes
       ...SmartFieldTypesAttributes
       ...MissingRelationFieldTypeAttributes
+      ...GeoFieldTypeAttributes
     }
   }
 
@@ -39,6 +40,7 @@ export const TABLE_FIELD_FRAGMENT = gql`
       ...DateFieldTypeAttributes
       ...SwitchFieldTypeAttributes
       ...MissingRelationFieldTypeAttributes
+      ...GeoFieldTypeAttributes
     }
     isList
     isRequired
@@ -101,6 +103,10 @@ export const TABLE_FIELD_FRAGMENT = gql`
     typeRestrictions
   }
 
+  fragment GeoFieldTypeAttributes on GeoFieldTypeAttributes {
+    format
+  }
+
   fragment SmartFieldTypesAttributes on SmartFieldTypeAttributes {
     format
     innerFields {
@@ -118,6 +124,7 @@ export const TABLE_FIELD_FRAGMENT = gql`
         ...DateFieldTypeAttributes
         ...SwitchFieldTypeAttributes
         ...MissingRelationFieldTypeAttributes
+        ...GeoFieldTypeAttributes
       }
     }
   }
@@ -177,6 +184,7 @@ export const TABLE_FRAGMENT = gql`
         SWITCH
         TEXT
         UUID
+        GEO
       }
       update {
         displayName
