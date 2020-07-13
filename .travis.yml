@@ -1,20 +1,20 @@
 language: node_js
 node_js:
-- 10
+  - 10
 install:
-- yarn
-- yarn build-packages
+  - yarn
+  - yarn build-packages
 script:
-- yarn lint
-- yarn prettier:check
-- yarn test
+  - yarn lint
+  - yarn prettier:check
+  - yarn test
 deploy:
-- provider: script
-  script: bin/publish.sh
-  skip_cleanup: true
-  on:
-    branch: master
-    tags: false
+  - provider: script
+    script: bin/publish.sh
+    skip_cleanup: true
+    on:
+      branch: master
+      tags: false
 env:
   global:
-    secure: I/7EhnIpoL7Xy2Pzbf9LMai9Wt/cVa8q2IJVR/GhsSgvT2tCFG/Q/8EeYGnMKhRqbwvc4p2glu4nAHaeJbsxPg1AeuaKuKNXGEc0S6QxN1NUg0X3UiP8eGfOyhYAANEZH3uhd7xGTsKOOewILOihngjCEZ/XPvrauiKdYQZaG95WLH6QHc1VvytWi7GKZnXdTkFdh0I6yGeVR48evmLageT/nTT767eBqA6xnR1Sktzwy8saDeTjv8tR6i861isgy+s+YaMOqW+/uK/oV3UjiEfEJsUAMa9vi/Jetu7GqH/g78+17F4dcq46dP/pc+p1xfM4YG/fl4w0XItjnUypP0j8CCmVxpWwT5X0Cipzzwswnso9vDZM9Fr999khyb+pWi7T8uvVhD0gtOy6S3ppaxr7+Mbxzd2I7cEe4FhIRXuXgMJ9mkmKjdfo3hdSd6iqnyP1TOcgaP71fTCD07OQd55YUARDFPEA2O9EavjSPHiQlT3X9tOM0Zpp+mB6SsndIK5zRGNclHAa6gSeVpNzGZgkIsNx2+uzokHfgyW1i7JWnNDm6VZ/BWnju1cKRotOYnNT0g0VM9a82CElJS1YffR27/VUf5djKdiZKnQ/nUhVUNmT4TXhDfqtl7cFVjR+6RixsE5+ujRKvsRMpD4XltGBT3u8JsWRoX9CnewtZpY=
+    secure: USELSJq6Erf4slXgSUxHRvsHXsEtxTu9huLhc3cZqirs4XXp24vAeKa6T7CMoGmg05BhW3Fe63/GPJxkqwvrGEd5L1ry8D2SX5U8IBMGCKU3LUet25D89Du1Ge2H/ktvvm4+cUMFwGHXlXsCyrcz2CgWcjW3L9qxP13RXh9eKkf+vC8y9GmWKNRrsp2ZdgXseZLcqJaR3COuy0btCWOGrIST4uXtHUPczW+/ptTGsqkLlw6W/MFR5AI66J1Ucub7Kx0On30Wf3W61WaMWIV++xqr2IQjC9ysval/4BU3cRMIi9P/xQndiLM6+b/p9QpVMv8u6nzFSjufbozRMNLostgWgdhXwwntHE+S74Az/nz7nhZYsAgGhM4Vp4DokzSfDgBs77mphsOLnIbP+HP7oTgi7NzWtFe+nCPo210Lc+1++bSNKDoB5tbdaQkBeFhbT/fEVAkMi8mH5w9AQV1f3VfcbKzQ6zGihLTQEo21cd9boKJDWx5fv0QbjIeMIHKWKwupYzxcBJALNBHy3xvx63sgwXgQz5dAYHHfbFLyBlpl6I9uZ80EMozktcg9SApKt6qLfDsnrGinHl3fKlPy8I5qyFx8a4R7BH3nD/wS7JCQhtuhCnizJSeKmvomB3jACz/bSR7wNWPrPW1IJ64ZfZaF8v8GknDjmC+hTqAkToQ=
