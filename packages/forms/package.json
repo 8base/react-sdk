@@ -5,6 +5,7 @@
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/forms#readme",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "../../bin/build-package.sh",
     "watch": "../../bin/watch-package.sh",
