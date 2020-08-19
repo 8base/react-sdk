@@ -29,6 +29,10 @@ const Form = ({
   appName,
   formatRelationToIds,
   ignoreNonTableFields,
+  beforeFormatDataForMutation,
+  afterFormatDataForMutation,
+  beforeFormatQueryData,
+  afterFormatQueryData,
   onSuccess,
   ...props
 }: FormProps) => {
@@ -39,6 +43,10 @@ const Form = ({
 
   if (tableSchemaName && tablesList) {
     tableSchema = tablesListSelectors.getTableByName(tablesList, tableSchemaName, appName);
+
+    if (beforeFormatQueryData) {
+      props.initialValues = beforeFormatQueryData(props.initialValues);
+    }
 
     if (tableSchema && type === MUTATION_TYPE.UPDATE && props.initialValues) {
       props.initialValues = formatDataAfterQuery(
@@ -51,6 +59,10 @@ const Form = ({
           formatRelationToIds,
         },
       );
+
+      if (afterFormatQueryData) {
+        props.initialValues = afterFormatQueryData(props.initialValues);
+      }
 
       props.initialValuesEqual = R.equals;
     }
@@ -79,13 +91,18 @@ const Form = ({
     {
       onSubmit: onSubmit => async (data: any, ...rest: any) => {
         let result = null;
+        let formattedData = data;
+
+        if (beforeFormatDataForMutation) {
+          formattedData = beforeFormatDataForMutation(data);
+        }
 
         try {
-          const formattedData =
+          formattedData =
             type && tableSchema && tablesList
               ? formatDataForMutation(
                   type,
-                  data,
+                  formattedData,
                   {
                     tableName: tableSchema.name,
                     schema: tablesList,
@@ -96,7 +113,11 @@ const Form = ({
                     skip: permissions && skipData,
                   },
                 )
-              : data;
+              : formattedData;
+
+          if (afterFormatDataForMutation) {
+            formattedData = afterFormatDataForMutation(formattedData);
+          }
 
           // @ts-ignore
           result = await onSubmit(formattedData, ...rest);

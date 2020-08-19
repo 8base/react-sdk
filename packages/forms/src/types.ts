@@ -1,11 +1,7 @@
 import React from 'react';
-import { FormApi, FieldState as FinalFieldState } from 'final-form';
+import { FormApi } from 'final-form';
 import { FormProps as FinalFormProps, FieldProps as FinalFieldProps } from 'react-final-form';
-import { FieldArrayProps as FinalFieldArrayProps } from 'react-final-form-arrays';
 import { FieldType, TableSchema, FieldSchema, Schema } from '@8base/utils';
-import { PreparedValidator } from '@8base/validate';
-
-type SchemaContextValue = Schema;
 
 type RenderableProps = {
   component?: React.ComponentType<any>;
@@ -27,6 +23,10 @@ type FormProps<FormValues = any> = {
   formatRelationToIds?: boolean;
   permissions?: any;
   onSuccess?: (result: any, form: FormApi) => void;
+  beforeFormatDataForMutation?: <T_OUT = object>(formValues: FormValues) => T_OUT;
+  afterFormatDataForMutation?: <T_IN = object, T_OUT = object>(data: T_IN) => T_OUT;
+  beforeFormatQueryData?: <T_IN = object, T_OUT = object>(data: T_IN) => T_OUT;
+  afterFormatQueryData?: <T = object>(data: T) => FormValues;
 } & FinalFormProps<FormValues>;
 
 type FieldsetProps = {
@@ -43,7 +43,6 @@ export {
   FormContextValue,
   FormProps,
   Schema,
-  SchemaContextValue,
   TableSchema,
   RenderableProps,
 };
