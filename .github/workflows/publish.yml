@@ -1,19 +1,15 @@
-name: checks
+name: publish
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  release:
+    types: [created]
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Install Dependencies
         run: yarn --frozen-lockfile
@@ -29,3 +25,9 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Publish
+        run: sh ./bin/pubpish.sh
+
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
