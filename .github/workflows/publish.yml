@@ -4,6 +4,9 @@ on:
   release:
     types: [created]
 
+env:
+  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -27,7 +30,4 @@ jobs:
         run: yarn test
 
       - name: Publish
-        run: sh ./bin/pubpish.sh
-
-      env:
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: sh ./bin/publish.sh
