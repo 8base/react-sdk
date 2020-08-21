@@ -27,7 +27,7 @@ jobs:
         run: yarn test
 
       - name: Publish
-        run: sh ./bin/pubpish.sh
+        run: sh ./bin/publish.sh
 
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
