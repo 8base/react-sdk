@@ -4,6 +4,7 @@
   "repository": "https://github.com/8base/react-sdk",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "../../bin/build-package.sh",
     "watch": "../../bin/watch-package.sh",

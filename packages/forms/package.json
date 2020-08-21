@@ -5,6 +5,7 @@
   "homepage": "https://github.com/8base/react-sdk/tree/master/packages/forms#readme",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "../../bin/build-package.sh",
     "watch": "../../bin/watch-package.sh",
@@ -23,13 +24,13 @@
     "@8base/error-codes": "^1.0.21",
     "@8base/utils": "^1.2.8",
     "@8base/validate": "^1.2.8",
-    "final-form": "^4.16.1",
-    "final-form-arrays": "^1.1.2",
+    "final-form": "^4.20.1",
+    "final-form-arrays": "^3.0.2",
     "graphql-tag": "^2.10.0",
     "prop-types": "^15.6.1",
     "ramda": "^0.26.1",
-    "react-final-form": "^6.3.0",
-    "react-final-form-arrays": "^3.1.0"
+    "react-final-form": "^6.5.1",
+    "react-final-form-arrays": "^3.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
