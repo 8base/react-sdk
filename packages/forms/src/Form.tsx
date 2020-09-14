@@ -124,6 +124,8 @@ const Form = ({
           // @ts-ignore
           onSuccess(result, ...rest);
         }
+
+        return result;
       },
     },
     props,
