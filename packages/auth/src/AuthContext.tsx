@@ -4,6 +4,7 @@ import { ISubscribableAuthClient } from '@8base/auth';
 
 export type AuthContextProps = {
   isAuthorized: boolean;
+  isEmailVerified?: boolean;
   authState: IAuthState;
   authClient: ISubscribableAuthClient;
 };

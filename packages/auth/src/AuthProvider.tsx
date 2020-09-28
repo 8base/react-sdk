@@ -11,6 +11,7 @@ type AuthProviderProps = {
 
 type AuthProviderState = {
   isAuthorized: boolean;
+  isEmailVerified?: boolean;
   authState: IAuthState;
 };
 
@@ -54,8 +55,10 @@ class AuthProvider extends React.Component<AuthProviderProps, AuthProviderState>
 
     const authState = authClient.getState();
     const isAuthorized = authClient.checkIsAuthorized();
+    const isEmailVerified =
+      authClient.checkIsEmailVerified && (authClient.checkIsEmailVerified() as boolean | undefined);
 
-    this.setState({ isAuthorized, authState });
+    this.setState({ isAuthorized, isEmailVerified, authState });
   };
 
   public componentDidMount() {
@@ -82,7 +85,7 @@ class AuthProvider extends React.Component<AuthProviderProps, AuthProviderState>
 
   public render() {
     const { children, authClient } = this.props;
-    const { isAuthorized, authState } = this.state;
+    const { isAuthorized, isEmailVerified, authState } = this.state;
 
     return (
       <AuthContext.Provider
@@ -90,6 +93,7 @@ class AuthProvider extends React.Component<AuthProviderProps, AuthProviderState>
           authClient,
           authState,
           isAuthorized,
+          isEmailVerified,
         }}
       >
         {children}
