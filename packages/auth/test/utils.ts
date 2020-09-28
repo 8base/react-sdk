@@ -46,7 +46,12 @@ export const DummyAuthClient = (): IAuthClient => {
     return externalAuth.logout();
   });
 
+  const getTokenInfo = jest.fn(() => {
+    return {};
+  });
+
   return {
+    getTokenInfo,
     getState,
     setState,
     purgeState,

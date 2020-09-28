@@ -55,7 +55,8 @@ class AuthProvider extends React.Component<AuthProviderProps, AuthProviderState>
 
     const authState = authClient.getState();
     const isAuthorized = authClient.checkIsAuthorized();
-    const isEmailVerified = authClient.checkIsEmailVerified && authClient.checkIsEmailVerified();
+    const isEmailVerified =
+      authClient.checkIsEmailVerified && (authClient.checkIsEmailVerified() as boolean | undefined);
 
     this.setState({ isAuthorized, isEmailVerified, authState });
   };
