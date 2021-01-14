@@ -74,6 +74,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
           policy,
           signature,
         },
+        sessionCache: true
       });
     }
 
