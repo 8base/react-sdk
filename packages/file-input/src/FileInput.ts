@@ -22,6 +22,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
     public static defaultProps = {
       maxFiles: 1,
       value: null,
+      sessionCache: false,
     };
 
     public static getDerivedStateFromProps(props: FileInputProps, state: FileInputState) {
@@ -53,7 +54,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
     }
 
     public async initFilestack() {
-      const { client } = this.props;
+      const { client, sessionCache } = this.props;
 
       let response = null;
 
@@ -74,6 +75,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
           policy,
           signature,
         },
+        sessionCache,
       });
     }
 
