@@ -20,6 +20,7 @@ export type FileInputProps = {
   }) => React.ReactNode;
   public?: boolean;
   maxFiles?: number;
+  sessionCache?: boolean;
   onUploadDone?: (value: FileInputValue, originalFile?: OriginalFileInputValue) => Promise<FileInputValue>;
   value?: FileInputValue | null;
 };
