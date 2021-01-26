@@ -22,7 +22,7 @@
     "@types/react": "^16.8.19",
     "@types/react-test-renderer": "^16.8.1",
     "hygen": "^4.0.9",
-    "lerna": "^3.16.4",
+    "lerna": "^3.22.1",
     "prettier": "^1.18.0",
     "rimraf": "^2.6.3",
     "tslint": "^5.17.0",
