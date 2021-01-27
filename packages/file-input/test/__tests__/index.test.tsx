@@ -6,7 +6,7 @@ import { FileInput } from '../../src';
 let mockOnUploadDone: any = null;
 let mocClient: any = null;
 
-jest.mock('react-apollo', () => {
+jest.mock('@apollo/client/react/hoc', () => {
   const client = {
     query: jest.fn(() => {
       mocClient = client;

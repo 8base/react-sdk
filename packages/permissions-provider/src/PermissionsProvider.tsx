@@ -1,8 +1,9 @@
 import React from 'react';
 import { DocumentNode } from 'graphql';
-import gql from 'graphql-tag';
 import * as R from 'ramda';
-import { Query } from 'react-apollo';
+import { gql } from '@apollo/client';
+// TODO: apollo Query component is deprecated
+import { Query } from '@apollo/client/react/components';
 import { withAuth, WithAuthProps } from '@8base-react/auth';
 
 import { PermissionsContext } from './PermissionsContext';

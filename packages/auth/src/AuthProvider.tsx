@@ -1,5 +1,5 @@
 import React from 'react';
-import { IAuthState, IAuthClient, SDKError, ERROR_CODES, PACKAGES, Unsubscribe } from '@8base/utils';
+import { IAuthState, SDKError, ERROR_CODES, PACKAGES, Unsubscribe } from '@8base/utils';
 import { ISubscribableAuthClient, SubscribableDecorator } from '@8base/auth';
 
 import { AuthContext } from './AuthContext';

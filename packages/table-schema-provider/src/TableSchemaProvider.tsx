@@ -1,8 +1,8 @@
 import React from 'react';
 import * as R from 'ramda';
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
-import { ApolloError } from 'apollo-client';
+import { ApolloError, gql } from '@apollo/client';
+// TODO: apollo Query component is deprecated
+import { Query } from '@apollo/client/react/components';
 import { TableSchema, Application } from '@8base/utils';
 
 import { TableSchemaContext } from './TableSchemaContext';

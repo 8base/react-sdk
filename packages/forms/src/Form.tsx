@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import * as R from 'ramda';
 import { FORM_ERROR } from 'final-form';
 import { Form as FinalForm } from 'react-final-form';
-import arrayMutators from 'final-form-arrays';
+import defaultMutators from 'final-form-arrays';
 import {
   formatDataForMutation,
   formatDataAfterQuery,
@@ -152,7 +152,7 @@ const Form = ({
     props,
   );
 
-  props.mutators = R.merge(arrayMutators, props.mutators);
+  props.mutators = R.mergeRight(defaultMutators, props.mutators || {});
 
   return (
     <FormContext.Provider value={{ tableSchema, loading }}>

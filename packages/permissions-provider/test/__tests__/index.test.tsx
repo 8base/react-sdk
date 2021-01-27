@@ -5,7 +5,6 @@ import {
   IfAllowed,
   PermissionsProvider,
   isAllowed,
-  PermissionsContext,
   withPermissions,
   usePermissions,
 } from '../../src';
@@ -82,7 +81,7 @@ jest.mock('@8base-react/auth', () => ({
   ),
 }));
 
-jest.mock('react-apollo', () => ({
+jest.mock('@apollo/client/react/components', () => ({
   Query: ({ children }: any) => children({ data: mockPermissionsData, loading: false }),
 }));
 

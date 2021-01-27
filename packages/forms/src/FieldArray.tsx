@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import * as R from 'ramda';
-import { FieldArray as FinalFieldArray } from 'react-final-form-arrays';
-import { FieldArrayProps } from 'react-final-form-arrays';
+import { FieldArray as FinalFieldArray, FieldArrayProps } from 'react-final-form-arrays';
 import { tableSelectors } from '@8base/utils';
 
 import { FormContext } from './FormContext';

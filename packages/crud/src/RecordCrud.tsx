@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Mutation, MutationFunction, MutationResult } from 'react-apollo';
-import gql from 'graphql-tag';
+import { MutationFunction, MutationResult, gql } from '@apollo/client';
+// TODO: apollo Mutation component is deprecated
+import { Mutation } from '@apollo/client/react/components'
 import {
   createTableRowCreateTag,
   createTableRowCreateManyTag,
@@ -32,7 +33,7 @@ const createRecordTag = (tableSchema: TableSchema, mode: CrudModes, options: Que
     case 'delete':
       return createTableRowDeleteTag([tableSchema], tableSchema.id);
     default:
-      return null;
+      return '';
   }
 };
 

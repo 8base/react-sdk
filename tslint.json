@@ -1,5 +1,6 @@
 {
   "extends": [
+    "tslint-config-standard",
     "tslint:recommended",
     "tslint-react",
     "tslint-config-prettier"
@@ -9,7 +10,8 @@
     "ban-types": false,
     "interface-over-type-literal": false,
     "no-shadowed-variable": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-extra-boolean-cast": false
   },
   "rulesDirectory": []
 }

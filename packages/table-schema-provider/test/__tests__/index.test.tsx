@@ -28,14 +28,14 @@ const MOCK_TABLES_SCHEMA: any = {
   count: 1,
 };
 
-jest.mock('react-apollo', () => ({
+jest.mock('@apollo/client/react/components', () => ({
   Query: ({ children, skip }: any) =>
     skip
       ? children({ data: undefined, loading: false })
       : children({ data: { tablesList: MOCK_TABLES_SCHEMA }, loading: false }),
 }));
 
-const { Query } = require('react-apollo'); // tslint:disable-line
+const { Query } = require('@apollo/client/react/components'); // tslint:disable-line
 
 describe('TableSchemaProvider', () => {
   beforeEach(() => {

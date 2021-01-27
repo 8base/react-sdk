@@ -1,6 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider } from '@apollo/client';
 import {
   InMemoryCache,
   IntrospectionFragmentMatcher,
@@ -29,6 +29,7 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
     public client: any;
 
     public createClient = R.memoizeWith(
+      // @ts-ignore-next-line
       R.identity,
       introspectionQueryResultData => {
         const {

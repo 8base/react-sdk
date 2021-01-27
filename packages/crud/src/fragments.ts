@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 export const NumberFieldTypeAttributes = gql`
   fragment NumberFieldTypeAttributes on NumberFieldTypeAttributes {

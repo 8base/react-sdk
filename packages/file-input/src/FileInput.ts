@@ -1,8 +1,8 @@
 import React from 'react';
-import { withApollo, WithApolloClient } from 'react-apollo';
-import { ApolloClient } from 'apollo-client';
+// TODO: apollo HOC is deprecated
+import { withApollo, WithApolloClient } from '@apollo/client/react/hoc';
+import { ApolloClient, gql } from '@apollo/client';
 import * as filestack from 'filestack-js';
-import gql from 'graphql-tag';
 import { FileInputProps, FileInputState } from './types';
 
 const FILE_UPLOAD_INFO_QUERY = gql`
@@ -16,8 +16,8 @@ const FILE_UPLOAD_INFO_QUERY = gql`
   }
 `;
 
-const FileInput: React.ComponentType<FileInputProps> = withApollo(
-  // @ts-ignore
+const FileInput: React.ComponentType<FileInputProps> = withApollo<FileInputProps>(
+  // @ts-ignore-next-line
   class FileInput extends React.Component<WithApolloClient<FileInputProps>, FileInputState> {
     public static defaultProps = {
       maxFiles: 1,
@@ -55,6 +55,10 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
 
     public async initFilestack() {
       const { client, sessionCache } = this.props;
+
+      if (!client) {
+        return;
+      }
 
       let response = null;
 

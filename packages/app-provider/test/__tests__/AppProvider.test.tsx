@@ -19,7 +19,7 @@ jest.mock('@8base-react/auth', () => ({
 }));
 
 jest.mock('@8base/apollo-client', () => {
-  const { ApolloClient } = require('apollo-client');
+  const { ApolloClient } = require('@apollo/client');
   const { InMemoryCache } = require('apollo-cache-inmemory');
   const { ApolloLink } = require('apollo-link');
 

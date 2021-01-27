@@ -4,7 +4,7 @@ import { IAuthClient, IAuthState } from '@8base/utils';
 import { SubscribableDecorator } from '@8base/auth';
 
 import { AuthContext, AuthProvider } from '../../src';
-import { DummyAuthClient, externalAuth } from '../utils';
+import { DummyAuthClient } from '../utils';
 
 const TOKEN = 'some token';
 
