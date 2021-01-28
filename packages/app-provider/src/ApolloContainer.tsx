@@ -1,10 +1,6 @@
 import React from 'react';
 import * as R from 'ramda';
-import { ApolloProvider } from '@apollo/client';
-import {
-  InMemoryCache,
-  IntrospectionFragmentMatcher,
-} from 'apollo-cache-inmemory';
+import { ApolloProvider, InMemoryCache } from '@apollo/client';
 import { withAuth, WithAuthProps } from '@8base-react/auth';
 import { ApolloClient } from '@8base/apollo-client';
 
@@ -31,7 +27,7 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
     public createClient = R.memoizeWith(
       // @ts-ignore-next-line
       R.identity,
-      introspectionQueryResultData => {
+      (introspectionQueryResultData) => {
         const {
           withAuth,
           withSubscriptions,
@@ -44,9 +40,7 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
           cache: introspectionQueryResultData
             ? new InMemoryCache({
                 ...cacheOptions,
-                fragmentMatcher: new IntrospectionFragmentMatcher({
-                  introspectionQueryResultData,
-                }),
+                possibleTypes: introspectionQueryResultData,
               })
             : new InMemoryCache(cacheOptions),
           extendLinks: this.props.extendLinks,

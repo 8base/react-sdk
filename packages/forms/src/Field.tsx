@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import * as R from 'ramda';
 import { Field as FinalField, FieldProps } from 'react-final-form';
-import createValidate from '@8base/validate';
+import { createValidate } from '@8base/validate';
 import { tableSelectors } from '@8base/utils';
 
 import { FormContext } from './FormContext';
 import { getFieldSchemaName } from './utils';
 
 // @ts-ignore
-const hackMultiple = component => ({ tempMultiple, ...props }) =>
+const hackMultiple = (component) => ({ tempMultiple, ...props }) =>
   React.createElement(component, {
     ...props,
     multiple: tempMultiple,

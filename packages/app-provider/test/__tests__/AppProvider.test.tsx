@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 
 import { WebAuth0AuthClient } from '@8base/web-auth0-auth-client';
 import { ApolloClient } from '@8base/apollo-client';
@@ -15,13 +15,11 @@ jest.mock('../../src/FragmentsSchemaContainer', () => ({
 
 jest.mock('@8base-react/auth', () => ({
   AuthProvider: jest.fn(({ children }) => <div>{children}</div>),
-  withAuth: jest.fn(Component => (props: any) => <Component {...props} />),
+  withAuth: jest.fn((Component) => (props: any) => <Component {...props} />),
 }));
 
 jest.mock('@8base/apollo-client', () => {
-  const { ApolloClient } = require('@apollo/client');
-  const { InMemoryCache } = require('apollo-cache-inmemory');
-  const { ApolloLink } = require('apollo-link');
+  const { ApolloClient, InMemoryCache, ApolloLink } = require('@apollo/client');
 
   return {
     ApolloClient: jest.fn(
@@ -52,7 +50,7 @@ describe('AppProvider', () => {
       logoutRedirectUri: `${window.location.origin}/auth`,
     });
 
-    mount(
+    TestRenderer.create(
       <AppProvider
         uri={uri}
         authClient={authClient}
@@ -106,7 +104,7 @@ describe('AppProvider', () => {
       logoutRedirectUri: `${window.location.origin}/auth`,
     });
 
-    const wrapper = mount(
+    const wrapper = TestRenderer.create(
       <AppProvider
         uri={uri}
         authClient={authClient}
@@ -125,7 +123,10 @@ describe('AppProvider', () => {
     } = (ApolloClient as any).mock.calls[0][0];
 
     expect(AuthProvider).toHaveBeenCalled();
-    expect(wrapper.find(AuthProvider).prop('authClient')).toEqual(authClient);
+    const authClientProps = wrapper.root.findByType(AuthProvider).props
+      .authClient;
+
+    expect(authClientProps).toEqual(authClient);
 
     expect(ApolloClient).toHaveBeenCalled();
     expect(apolloClientProps.withAuth).toBeTruthy();
@@ -153,7 +154,7 @@ describe('AppProvider', () => {
     const onRequestError = jest.fn();
     const onRequestSuccess = jest.fn();
 
-    mount(
+    TestRenderer.create(
       <AppProvider
         uri={uri}
         extendLinks={extendLinks}
@@ -190,14 +191,16 @@ describe('AppProvider', () => {
     const onRequestError = jest.fn();
     const onRequestSuccess = jest.fn();
     const cacheOptions = {
-      cacheRedirects: {
+      typePolicies: {
         Query: {
-          test: jest.fn(),
+          fields: {
+            test: jest.fn(),
+          },
         },
       },
     };
 
-    mount(
+    TestRenderer.create(
       <AppProvider
         uri={uri}
         onRequestError={onRequestError}
@@ -215,15 +218,15 @@ describe('AppProvider', () => {
     expect(cache.config).toMatchInlineSnapshot(`
       Object {
         "addTypename": true,
-        "cacheRedirects": Object {
+        "dataIdFromObject": [Function],
+        "resultCaching": true,
+        "typePolicies": Object {
           "Query": Object {
-            "test": [MockFunction],
+            "fields": Object {
+              "test": [MockFunction],
+            },
           },
         },
-        "dataIdFromObject": [Function],
-        "fragmentMatcher": HeuristicFragmentMatcher {},
-        "freezeResults": false,
-        "resultCaching": true,
       }
     `);
   });

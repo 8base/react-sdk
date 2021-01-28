@@ -1,5 +1,4 @@
-import { ApolloLink } from 'apollo-link';
-import { InMemoryCacheConfig } from 'apollo-cache-inmemory';
+import { ApolloLink, InMemoryCacheConfig } from '@apollo/client';
 import { IAuthState, TableSchema, Application } from '@8base/utils';
 
 export type ApolloContainerPassedProps = {
