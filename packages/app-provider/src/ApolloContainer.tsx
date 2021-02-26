@@ -52,6 +52,7 @@ const ApolloContainer: React.ComponentType<ApolloContainerProps> = withAuth(
           onRequestError: this.props.onRequestError,
           onRequestSuccess: this.props.onRequestSuccess,
           uri: this.props.uri,
+          subscriptionUri: this.props.subscriptionUri,
           withSubscriptions,
         };
 
