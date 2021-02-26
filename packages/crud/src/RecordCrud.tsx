@@ -32,7 +32,7 @@ const createRecordTag = (tableSchema: TableSchema, mode: CrudModes, options: Que
     case 'delete':
       return createTableRowDeleteTag([tableSchema], tableSchema.id);
     default:
-      return null;
+      return '';
   }
 };
 
