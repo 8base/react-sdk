@@ -30,6 +30,7 @@ type PrefilledApolloContainerProps =
 /**
  * `AppProvider` universal provider which loads fragments schema and provides Apollo client with it, authentication and table schema.
  * @prop {string} [uri] - The 8base API field schema.
+ * @prop {string} [subscriptionUri] Endpoint of the GraphQl websocket server.
  * @prop {Object} [authClient] - The 8base auth client.
  * @prop {Function} [onRequestSuccess] - The callback which called when request is success.
  * @prop {Function} [onRequestError] - The callback which called when request is fail.
@@ -41,6 +42,7 @@ type PrefilledApolloContainerProps =
  */
 const AppProvider = ({
   uri,
+  subscriptionUri,
   authClient,
   onRequestSuccess,
   onRequestError,
@@ -63,6 +65,7 @@ const AppProvider = ({
     <ApolloContainer
       withSubscriptions={withSubscriptions}
       uri={uri}
+      subscriptionUri={subscriptionUri}
       extendLinks={extendLinks}
       onRequestSuccess={onRequestSuccess}
       onRequestError={onRequestError}

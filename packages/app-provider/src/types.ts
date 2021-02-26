@@ -4,6 +4,7 @@ import { IAuthState, TableSchema, Application } from '@8base/utils';
 
 export type ApolloContainerPassedProps = {
   uri: string;
+  subscriptionUri?: string;
   autoSignUp?: boolean;
   withSubscriptions?: boolean;
   authProfileId?: string;
