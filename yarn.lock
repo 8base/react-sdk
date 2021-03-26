@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@8base/api-token-auth-client@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/api-token-auth-client/-/api-token-auth-client-1.4.3.tgz#4891a37820d986b7e374508fb3b1087a100874fa"
-  integrity sha512-IURZW19WEgjONOUyycvVwbBT16qwSKbphTqaxXZaLmaocoUVB0u8dVFzUOfBXnALsFndcV7komLcRiE0GCUk0A==
+"@8base/api-token-auth-client@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/api-token-auth-client/-/api-token-auth-client-1.4.4.tgz#dd5987894234ccbe25f5804f8b253bacae753b43"
+  integrity sha512-vMoAVxgLBu2lC94QRN+UXDl0x5PkoFYGLifoXFmhQVbr00Fse2qygtAGcZs8uJDzYzDH97HpDelgfNFlRaC06A==
   dependencies:
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     jwt-decode "^3.0.0-beta.2"
 
 "@8base/apollo-client@^1.4.0":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/apollo-client/-/apollo-client-1.4.3.tgz#213aa3bbc5c402ebaf253feef8792841632675f4"
-  integrity sha512-Zuh8QdCxeTdDDW4VZkPzWPpRFTmN7t0nmu26ttW2b44WURFIeBNXRV6hMkhrvMkPkiZHbkm2j5iTIPzP9s7xZQ==
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/apollo-client/-/apollo-client-1.4.4.tgz#5e6486333bbf1198fc127abd3a3675167a994cc0"
+  integrity sha512-z6qGIeJZ9j7tIyKIYctdTC6MLFBDIOsMJBC+jSSUmD/pQ0RLicicLb8iParSYh1NYaYkYn6goLf9+gFCL3BAoA==
   dependencies:
-    "@8base/apollo-links" "^1.4.3"
-    "@8base/utils" "^1.4.3"
+    "@8base/apollo-links" "^1.4.4"
+    "@8base/utils" "^1.4.4"
     apollo-cache-inmemory "^1.5.1"
     apollo-link "1.2.11"
     apollo-link-batch-http "^1.2.11"
@@ -32,15 +32,15 @@
     apollo-link "1.2.11"
     tslib "^1.9.3"
 
-"@8base/apollo-links@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/apollo-links/-/apollo-links-1.4.3.tgz#e589e8da43d63f56a98e6af915ec88a5e2fca113"
-  integrity sha512-z+W8Mnos4D6m0r4RMHYWAPRSqipLUme6oCYCgZhxu7M3OYYG6TlLRBQUnfp/yBuejLA3GAapeYbOrBMQjwt26Q==
+"@8base/apollo-links@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/apollo-links/-/apollo-links-1.4.4.tgz#8d97dfe7f8976a0375786c8f1b609a3e605baf23"
+  integrity sha512-Y1dcAFCEaAhfVxqat5y/72POrJHYhucMDeJSS9ofFb2oILb3HXk9ri/SW+S20k0NecCQrLeKxuzkMYTiy6uxzA==
   dependencies:
     "@8base/apollo-link-ws" "1.0.20"
     "@8base/error-codes" "^1.0.17"
     "@8base/subscriptions-transport-ws" "^0.9.16"
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     apollo-link "1.2.11"
     apollo-link-error "^1.1.10"
     graphql-tag "^2.9.2"
@@ -48,15 +48,15 @@
     zen-observable-ts "^0.8.18"
 
 "@8base/auth@^1.4.0":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/auth/-/auth-1.4.3.tgz#7592656a5e7b7e18952fdd446d486b974318e28b"
-  integrity sha512-6mR1UnRE1xlZObMM3EN1lZUvmJoigryiIWai9ukJRY45Q9BRGoMztwYHBDYXCE0rzJ5ORgmT2B8tsl4C3gXY9g==
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/auth/-/auth-1.4.4.tgz#86bbd363c1eaf5697100e0a1993c559a32d41eb4"
+  integrity sha512-hVhXkl87y9XVQRydHs+P+GNqpLZc98BZWqzzht4kEf/UyuKyGOfa+t67eyCqdQS7OLGzKV+dwqr6HrgZ96o5vQ==
   dependencies:
-    "@8base/api-token-auth-client" "^1.4.3"
-    "@8base/utils" "^1.4.3"
-    "@8base/web-auth0-auth-client" "^1.4.3"
-    "@8base/web-cognito-auth-client" "^1.4.3"
-    "@8base/web-oauth-client" "^1.4.3"
+    "@8base/api-token-auth-client" "^1.4.4"
+    "@8base/utils" "^1.4.4"
+    "@8base/web-auth0-auth-client" "^1.4.4"
+    "@8base/web-cognito-auth-client" "^1.4.4"
+    "@8base/web-oauth-client" "^1.4.4"
     ramda "^0.26.1"
 
 "@8base/error-codes@^1.0.17", "@8base/error-codes@^1.0.22":
@@ -83,10 +83,10 @@
     symbol-observable "^1.0.4"
     ws "^5.2.0"
 
-"@8base/utils@^1.4.0", "@8base/utils@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/utils/-/utils-1.4.3.tgz#11641f647b52e36fd222f8aabfa7b44f28df15a6"
-  integrity sha512-SH/j+rNXHkYMuZOIE+9tFnLlg3z0/Eeic533Hoa56YVBNzv/5vaKyzd21YiFIdn//8MsPedLaNyr7saYZCLSoA==
+"@8base/utils@^1.4.0", "@8base/utils@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/utils/-/utils-1.4.4.tgz#0fd10029da8f6ef5a2656078df2178430422814b"
+  integrity sha512-R9bv2Ahy8JqjR6Yd6fnbsmWOLuZwajDb77/Y27l9DW1F0jm4v00h0beUeOXRlrmA4D5Agp8UVc9SbVGtNfVfDg==
   dependencies:
     "@8base/error-codes" "^1.0.17"
     "@8base/schema-name-generator" "^0.1.5"
@@ -97,40 +97,40 @@
     reselect "^4.0.0"
 
 "@8base/validate@^1.4.0":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/validate/-/validate-1.4.3.tgz#15861514f290270e78664fcef1a72f4d36b41eef"
-  integrity sha512-1gRi8jUWRMc4s6h2o6RWGYPdrvqON+xJZlKFhWonFKOMbFtgps3/tlNckuqZfxNpkQvguEOizo1oOEy65OWPEw==
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/validate/-/validate-1.4.4.tgz#637b9810fc628111229fd0399527d57c1f869c6b"
+  integrity sha512-8ICwUGflYVr0b660fo47hKLOLoTetQZTVOk7K1XwgkdZs4/Mud77depU3U8dmCni8z9Vkw5tmvob9H1oUO4M5w==
   dependencies:
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     decimal.js "^10.1.1"
     ramda "^0.26.1"
 
-"@8base/web-auth0-auth-client@^1.4.0", "@8base/web-auth0-auth-client@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/web-auth0-auth-client/-/web-auth0-auth-client-1.4.3.tgz#8659bf9fb41b7f5623458f8daeca5e653f49e0ee"
-  integrity sha512-n5rCMMWQuiLc1CeRDyNj4oytGGPvI2/4GmvSr6hNmwPWQJQYWSXE9CrCKWYnM991TvcHwHQIkv7p2PigLRlHZA==
+"@8base/web-auth0-auth-client@^1.4.0", "@8base/web-auth0-auth-client@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/web-auth0-auth-client/-/web-auth0-auth-client-1.4.4.tgz#2d3859f7428940f3ace6b75e6aa0c286db53c617"
+  integrity sha512-Ne7Br2ZRTfY+JvshRgHdnWplto+Wa8cxnGNOSSSthu4EFMvuZi2EkbXYdEdVbcwEWMrfe17NUqMt7utnqUO9vg==
   dependencies:
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     auth0-js "^9.11.1"
     jwt-decode "^3.0.0-beta.2"
     ramda "^0.26.1"
 
-"@8base/web-cognito-auth-client@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/web-cognito-auth-client/-/web-cognito-auth-client-1.4.3.tgz#ff721b92f472f16cf65fdea06ef8801c5edf27e0"
-  integrity sha512-UYYXC5dadJUXdNqDJ2mJdeR0FlJpF7ff+uBRoG26d3HymV3dDLauY1Ea96zUkDSWuM09/5Pp3MG3T1ODyCBp5A==
+"@8base/web-cognito-auth-client@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/web-cognito-auth-client/-/web-cognito-auth-client-1.4.4.tgz#0eebaac3640d4073109e3091d1e87a68bbb1e341"
+  integrity sha512-mb1+vCQfw/hzzJVZ+msXT98z+YIpX+HrPqSDqeJ1PeFp+QpK/gkD5Vefr+AZ9Qk+EUUIqXQhr1XIXE37MusLjg==
   dependencies:
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     jwt-decode "^3.0.0-beta.2"
     qs "^6.9.4"
     ramda "^0.26.1"
 
-"@8base/web-oauth-client@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@8base/web-oauth-client/-/web-oauth-client-1.4.3.tgz#63d522e100be31c5b9be691f03757bc9a8746748"
-  integrity sha512-NoD/QRWR36hzA+AgRuoCsKGZs6lOae4D/XnSeoBsDIIYSzVVpltDeestKlMkXoHo1Pf/x1dY9FrdQ0SAn/rsGA==
+"@8base/web-oauth-client@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@8base/web-oauth-client/-/web-oauth-client-1.4.4.tgz#7301e0473660446e896ca6a296fe1b8bb171e360"
+  integrity sha512-Zq+7gXsLxGiv+b7GqS2dCkASS6oFOI3UDhcjR/bdXLAi39x31x2M3D3Rbuel14SY6FxYn5QwUqJNC1eDwfvTzQ==
   dependencies:
-    "@8base/utils" "^1.4.3"
+    "@8base/utils" "^1.4.4"
     jwt-decode "^3.0.0-beta.2"
 
 "@apollo/react-common@^3.1.0", "@apollo/react-common@^3.1.1":
@@ -2366,9 +2366,9 @@
   integrity sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
 
 "@types/node@>=6":
-  version "14.14.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
-  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
+  version "14.14.36"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.36.tgz#5637905dbb15c30a33a3c65b9ef7c20e3c85ebad"
+  integrity sha512-kjivUwDJfIjngzbhooRnOLhGYz6oRFi+L+EpMjxroDYXwDw9lHrJJ43E+dJ6KAd3V3WxWAJ/qZE9XKYHhjPOFQ==
 
 "@types/prop-types@*":
   version "15.7.2"
@@ -3163,9 +3163,9 @@ atob@^2.1.1:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 auth0-js@^9.11.1:
-  version "9.14.3"
-  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.14.3.tgz#1b6feee3c8a131906694713c82c68f46eabc953c"
-  integrity sha512-UO/fGv9641PUpYjz2nkPaUHzzrhNaJKupJOqt8blj1pD6wBgpZtxUSXBox6Y8md3eTBzpxeWxV+6RKzzERvr1g==
+  version "9.15.0"
+  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.15.0.tgz#ebb88aa87e9aee313f084e3295a57eadaf2d4f8c"
+  integrity sha512-LM9gdOeN7yG+F7OWaq8LeJ21GR3ZyKV72+IAN8/MrxPRr7VAMzdvXEsLTx7r9QizHBKfNfXbRoy1AeLQVPJqWQ==
   dependencies:
     base64-js "^1.3.0"
     idtoken-verifier "^2.0.3"
@@ -3708,6 +3708,14 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+call-bind@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c"
+  integrity sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==
+  dependencies:
+    function-bind "^1.1.1"
+    get-intrinsic "^1.0.2"
 
 call-me-maybe@^1.0.1:
   version "1.0.1"
@@ -4736,12 +4744,19 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
+debug@^4.0.1, debug@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
   dependencies:
     ms "^2.1.1"
+
+debug@^4.1.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
+  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+  dependencies:
+    ms "2.1.2"
 
 debuglog@^1.0.1:
   version "1.0.1"
@@ -6216,6 +6231,15 @@ get-caller-file@^2.0.1:
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
+get-intrinsic@^1.0.2:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
+  integrity sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==
+  dependencies:
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.1"
+
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.1.tgz#6f7764f88ea11e0b514bd9bd860a132259992ca4"
@@ -6505,6 +6529,11 @@ has-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
   integrity sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=
+
+has-symbols@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423"
+  integrity sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==
 
 has-unicode@^2.0.0, has-unicode@^2.0.1:
   version "2.0.1"
@@ -8867,7 +8896,7 @@ ms@2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
   integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
 
-ms@^2.0.0:
+ms@2.1.2, ms@^2.0.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
@@ -9270,6 +9299,11 @@ object-inspect@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.6.0.tgz#c70b6cbf72f274aab4c34c0c82f5167bf82cf15b"
   integrity sha512-GJzfBZ6DgDAmnuaM3104jR4s1Myxr3Y3zfIyN4z3UdqN69oSRacNK8UhnobDdC+7J2AHCjGwxQubNJfE70SXXQ==
+
+object-inspect@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.9.0.tgz#c90521d74e1127b67266ded3394ad6116986533a"
+  integrity sha512-i3Bp9iTqwhaLZBxGkRfo5ZbE07BQRT7MGu8+nNgwW9ItGp1TzCTw2DLEoWwjClxBjOFI/hWljTAmYGCEwmtnOw==
 
 object-is@^1.0.1:
   version "1.0.1"
@@ -10759,9 +10793,11 @@ qs@6.7.0:
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 qs@^6.7.0, qs@^6.9.4:
-  version "6.9.6"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
-  integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
+  version "6.10.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
+  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
+  dependencies:
+    side-channel "^1.0.4"
 
 qs@~6.5.2:
   version "6.5.2"
@@ -11584,10 +11620,15 @@ safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
-safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0, safe-buffer@~5.2.0:
+safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
   integrity sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
+
+safe-buffer@~5.2.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
 safe-regex@^1.1.0:
   version "1.1.0"
@@ -11690,9 +11731,9 @@ semver@^6.0.0, semver@^6.2.0, semver@^6.3.0:
   integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
 semver@^7.3.2:
-  version "7.3.4"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.4.tgz#27aaa7d2e4ca76452f98d3add093a72c943edc97"
-  integrity sha512-tCfb2WLjqFAtXn4KEdxIhalnRtoKFN7nAwj0B3ZXCbQloV2tq5eDbcTmT68JJD3nRJq24/XgxtQKFIpQdtvmVw==
+  version "7.3.5"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
+  integrity sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ==
   dependencies:
     lru-cache "^6.0.0"
 
@@ -11834,6 +11875,15 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+
+side-channel@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
+  integrity sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==
+  dependencies:
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.2"
+    object-inspect "^1.9.0"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
@@ -12749,15 +12799,15 @@ tslib@1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
   integrity sha512-f/qGG2tUkrISBlQZEjEqoZ3B2+npJjIf04H1wuAv9iA8i04Icp+61KRXxFdha22670NJopsZCIjhC3SnjPRKrQ==
 
-tslib@^1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
-  integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-
-tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
+
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
+  integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 
 tslint-config-prettier@^1.18.0:
   version "1.18.0"
