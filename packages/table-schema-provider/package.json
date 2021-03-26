@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@8base-react/utils": "^1.6.3",
-    "@8base/utils": "^1.4.0",
+    "@8base/utils": "^1.4.4",
     "graphql-tag": "^2.10.0",
     "ramda": "^0.26.1"
   },
