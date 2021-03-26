@@ -21,15 +21,15 @@
   "dependencies": {
     "@8base-react/auth": "^1.6.3",
     "@8base-react/table-schema-provider": "^1.6.3",
-    "@8base/apollo-client": "^1.4.4",
-    "@8base/auth": "^1.4.4",
+    "@8base/apollo-client": "^1.4.0",
+    "@8base/auth": "^1.4.0",
     "@8base/error-codes": "^1.0.22",
-    "@8base/utils": "^1.4.4",
+    "@8base/utils": "^1.4.0",
     "apollo-cache-inmemory": "^1.5.1",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
-    "@8base/web-auth0-auth-client": "^1.4.4",
+    "@8base/web-auth0-auth-client": "^1.4.0",
     "@types/graphql": "^0.13.0",
     "@types/jest": "^24.0.13",
     "@types/node": "^12.0.2",
