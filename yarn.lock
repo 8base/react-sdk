@@ -10,7 +10,7 @@
     "@8base/utils" "^1.4.4"
     jwt-decode "^3.0.0-beta.2"
 
-"@8base/apollo-client@^1.4.0":
+"@8base/apollo-client@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@8base/apollo-client/-/apollo-client-1.4.4.tgz#5e6486333bbf1198fc127abd3a3675167a994cc0"
   integrity sha512-z6qGIeJZ9j7tIyKIYctdTC6MLFBDIOsMJBC+jSSUmD/pQ0RLicicLb8iParSYh1NYaYkYn6goLf9+gFCL3BAoA==
@@ -47,7 +47,7 @@
     ramda "^0.26.1"
     zen-observable-ts "^0.8.18"
 
-"@8base/auth@^1.4.0":
+"@8base/auth@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@8base/auth/-/auth-1.4.4.tgz#86bbd363c1eaf5697100e0a1993c559a32d41eb4"
   integrity sha512-hVhXkl87y9XVQRydHs+P+GNqpLZc98BZWqzzht4kEf/UyuKyGOfa+t67eyCqdQS7OLGzKV+dwqr6HrgZ96o5vQ==
@@ -83,7 +83,7 @@
     symbol-observable "^1.0.4"
     ws "^5.2.0"
 
-"@8base/utils@^1.4.0", "@8base/utils@^1.4.4":
+"@8base/utils@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@8base/utils/-/utils-1.4.4.tgz#0fd10029da8f6ef5a2656078df2178430422814b"
   integrity sha512-R9bv2Ahy8JqjR6Yd6fnbsmWOLuZwajDb77/Y27l9DW1F0jm4v00h0beUeOXRlrmA4D5Agp8UVc9SbVGtNfVfDg==
@@ -96,7 +96,7 @@
     ramda "^0.26.1"
     reselect "^4.0.0"
 
-"@8base/validate@^1.4.0":
+"@8base/validate@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@8base/validate/-/validate-1.4.4.tgz#637b9810fc628111229fd0399527d57c1f869c6b"
   integrity sha512-8ICwUGflYVr0b660fo47hKLOLoTetQZTVOk7K1XwgkdZs4/Mud77depU3U8dmCni8z9Vkw5tmvob9H1oUO4M5w==
@@ -105,7 +105,7 @@
     decimal.js "^10.1.1"
     ramda "^0.26.1"
 
-"@8base/web-auth0-auth-client@^1.4.0", "@8base/web-auth0-auth-client@^1.4.4":
+"@8base/web-auth0-auth-client@^1.4.4":
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/@8base/web-auth0-auth-client/-/web-auth0-auth-client-1.4.4.tgz#2d3859f7428940f3ace6b75e6aa0c286db53c617"
   integrity sha512-Ne7Br2ZRTfY+JvshRgHdnWplto+Wa8cxnGNOSSSthu4EFMvuZi2EkbXYdEdVbcwEWMrfe17NUqMt7utnqUO9vg==
