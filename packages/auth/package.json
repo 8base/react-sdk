@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@8base-react/utils": "^1.6.3",
-    "@8base/auth": "^1.4.0",
-    "@8base/utils": "^1.4.0"
+    "@8base/auth": "^1.4.4",
+    "@8base/utils": "^1.4.4"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
