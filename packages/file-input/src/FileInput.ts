@@ -59,7 +59,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
       let response = null;
 
       try {
-        response = await client.query({ query: FILE_UPLOAD_INFO_QUERY });
+        response = await client.query({ query: FILE_UPLOAD_INFO_QUERY, fetchPolicy: 'network-only' });
       } catch (e) {
         this.setState({ error: e });
 
