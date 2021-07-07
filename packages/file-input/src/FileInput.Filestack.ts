@@ -16,7 +16,7 @@ const FILE_UPLOAD_INFO_QUERY = gql`
   }
 `;
 
-const FileInput: React.ComponentType<FileInputProps> = withApollo(
+const FileInputFilestack: React.ComponentType<FileInputProps> = withApollo(
   // @ts-ignore
   class FileInput extends React.Component<WithApolloClient<FileInputProps>, FileInputState> {
     public static defaultProps = {
@@ -169,4 +169,4 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
   },
 );
 
-export { FileInput };
+export { FileInputFilestack };
