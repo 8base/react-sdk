@@ -1,2 +1,2 @@
-export { FileInput } from './FileInput.Filestack';
+export { FileInput } from './FileInput';
 export * from './types';
