@@ -3,7 +3,7 @@ import { withApollo, WithApolloClient } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import * as filestack from 'filestack-js';
 import gql from 'graphql-tag';
-import { FileInputProps, FileInputState } from './types';
+import { FileInputProps, FileInputState } from '../../types';
 
 const FILE_UPLOAD_INFO_QUERY = gql`
   query FileUploadInfo {
