@@ -19,7 +19,7 @@ export type FileInputProps = {
     value: FileInputValue | null;
     originalFile: OriginalFileInputValue | null;
     error: object | null;
-  }) => React.ReactNode;
+  }) => JSX.Element;
   public?: boolean;
   fetchPolicy?: FetchPolicy;
   maxFiles?: number;
