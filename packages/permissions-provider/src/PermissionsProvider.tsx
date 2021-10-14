@@ -1,12 +1,11 @@
 import React from 'react';
 import { DocumentNode } from 'graphql';
 import gql from 'graphql-tag';
-import * as R from 'ramda';
 import { Query } from 'react-apollo';
 import { withAuth, WithAuthProps } from '@8base-react/auth';
 
 import { PermissionsContext } from './PermissionsContext';
-import { getPermissions } from './getPermissions';
+import { getPermissions, getRoles } from './utils';
 import { RequestPermissions } from './types';
 
 const USER_PERMISSIONS_QUERY = gql`
@@ -32,19 +31,21 @@ const USER_PERMISSIONS_QUERY = gql`
 
 const TEAM_MEMBER_PERMISSIONS_QUERY = gql`
   query TeamMemberPermissions {
-    teamMember {
-      id
-      permissions {
-        items {
-          resource
-          resourceType
-          permission
+    system {
+      environmentMember {
+        email
+        permissions {
+          items {
+            resource
+            resourceType
+            permission
+          }
         }
-      }
-      roles {
-        items {
-          id
-          name
+        roles {
+          items {
+            id
+            name
+          }
         }
       }
     }
@@ -84,11 +85,7 @@ const PermissionsProvider: React.ComponentType<PermissionsProviderProps> = withA
       const { type = 'teamMember' } = this.props;
 
       const permissions = getPermissions(data, type);
-
-      const roles = R.pipe(
-        R.pathOr([], [type, 'roles', 'items']),
-        R.map(({ name }) => name),
-      )(data);
+      const roles = getRoles(data, type);
 
       return (
         <PermissionsContext.Provider value={{ permissions, roles }}>

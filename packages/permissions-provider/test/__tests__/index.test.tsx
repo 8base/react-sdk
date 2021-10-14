@@ -10,68 +10,72 @@ import {
   usePermissions,
 } from '../../src';
 
+const mockPermissions = {
+  items: [
+    {
+      resource: 'Users',
+      resourceType: 'data',
+      permission: {
+        create: {
+          allow: true,
+        },
+        delete: {
+          allow: true,
+        },
+        read: {
+          allow: true,
+          fields: {
+            createdAt: true,
+            updatedAt: true,
+            email: true,
+            isOwner: true,
+            firstName: true,
+            lastName: true,
+            cellPhone: true,
+            workPhone: true,
+            workPhoneExt: true,
+            gender: true,
+            birthday: true,
+            language: true,
+            timezone: true,
+          },
+        },
+        update: {
+          allow: true,
+          fields: {
+            createdAt: true,
+            updatedAt: true,
+            email: false,
+            isOwner: true,
+            firstName: true,
+            lastName: true,
+            cellPhone: true,
+            workPhone: true,
+            workPhoneExt: true,
+            gender: true,
+            birthday: true,
+            language: true,
+            timezone: true,
+          },
+        },
+      },
+    },
+    {
+      resource: 'schema',
+      resourceType: 'custom',
+      permission: {
+        edit: {
+          allow: false,
+        },
+      },
+    },
+  ],
+};
+
 const mockPermissionsData = {
-  teamMember: {
-    permissions: {
-      items: [
-        {
-          resource: 'Users',
-          resourceType: 'data',
-          permission: {
-            create: {
-              allow: true,
-            },
-            delete: {
-              allow: true,
-            },
-            read: {
-              allow: true,
-              fields: {
-                createdAt: true,
-                updatedAt: true,
-                email: true,
-                isOwner: true,
-                firstName: true,
-                lastName: true,
-                cellPhone: true,
-                workPhone: true,
-                workPhoneExt: true,
-                gender: true,
-                birthday: true,
-                language: true,
-                timezone: true,
-              },
-            },
-            update: {
-              allow: true,
-              fields: {
-                createdAt: true,
-                updatedAt: true,
-                email: false,
-                isOwner: true,
-                firstName: true,
-                lastName: true,
-                cellPhone: true,
-                workPhone: true,
-                workPhoneExt: true,
-                gender: true,
-                birthday: true,
-                language: true,
-                timezone: true,
-              },
-            },
-          },
-        },
-        {
-          resource: 'schema',
-          resourceType: 'custom',
-          permission: {
-            edit: {
-              allow: false,
-            },
-          },
-        },
-      ],
+  system: {
+    environmentMember: {
+      permissions: mockPermissions,
     },
   },
 };
