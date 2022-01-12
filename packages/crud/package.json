@@ -21,9 +21,9 @@
     "@8base-react/permissions-provider": "^1.7.1",
     "@8base-react/table-schema-provider": "^1.7.1",
     "@8base/schema-name-generator": "^0.1.21",
-    "@8base/utils": "^1.4.4",
+    "@8base/utils": "^2.0.0",
     "graphql-tag": "^2.10.0",
-    "ramda": "^0.26.1"
+    "ramda": "^0.27.2"
   },
   "devDependencies": {
     "@types/graphql": "^14.2.0",
