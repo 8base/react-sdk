@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@8base/api-token-auth-client@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/api-token-auth-client/-/api-token-auth-client-1.6.1.tgz#7d01389ac7aa38e32636be29ecb1282d181e49d9"
-  integrity sha512-8it3txaRPaSol0q0btyiEX7PosBhNAH8qK2na0DFfnpCoxGzJ1O/S3FhH4VTq7D7Y5SEWDilXI/4mY7IAfYWKg==
+"@8base/api-token-auth-client@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/api-token-auth-client/-/api-token-auth-client-1.6.2.tgz#c27786d2ba7fdf9152d7d73aad5b81e75c5ab73d"
+  integrity sha512-wnTUoLtmuIbGBGr5Irx12h98U7HBOut9he9iNZ7EHk23auB9f7wUuC5ESsdc5zJqR7NmsAg9oUKfpw1FlQ+/KQ==
   dependencies:
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     jwt-decode "^3.0.0-beta.2"
 
 "@8base/apollo-client@^1.4.4":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/apollo-client/-/apollo-client-1.6.1.tgz#7e74db23199b945c112ddffbe7af6e8ed0d12043"
-  integrity sha512-PeskDcA3lEczU3Xi0u4qddpjIP6ak/qchWMsQe2nDfhm7pzAWISLcznSW0A6kT1Aq5gNlnw9qN6YCE8DIy9Tkw==
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/apollo-client/-/apollo-client-1.6.2.tgz#bf6187364b5eea7900e71b86eeb69353fddda6d8"
+  integrity sha512-qAMpLixvDjrkjiHOxcHaQO8i1BcfqLZCcBYU2ww6ICdM7NvemFr9uROdNnD2ynLg8huUjiPp+LtmpfpfPlf12g==
   dependencies:
-    "@8base/apollo-links" "^1.6.1"
-    "@8base/utils" "^1.6.1"
+    "@8base/apollo-links" "^1.6.2"
+    "@8base/utils" "^1.6.2"
     apollo-cache-inmemory "^1.5.1"
     apollo-link "1.2.11"
     apollo-link-batch-http "^1.2.11"
@@ -32,15 +32,15 @@
     apollo-link "1.2.11"
     tslib "^1.9.3"
 
-"@8base/apollo-links@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/apollo-links/-/apollo-links-1.6.1.tgz#58b6e8618c49a3d4f73c0cefdd5fa5cc33185f91"
-  integrity sha512-CQaxG3gskkTt477DOgeJe4+sMvwrzSmzWXLYD5n+gRIR4CsTT16ioMhmk1oiASOvXopFyA5CtvFG1f2EHiy7SA==
+"@8base/apollo-links@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/apollo-links/-/apollo-links-1.6.2.tgz#ec22198e6b320da256f13a2a9d68298258dd7e4f"
+  integrity sha512-1CYKYbCh/LECGlqhQzquH4uKtpUlO+ud4Hm9Rw2OGw4OiUovIg69ud4Dr74I71e3DJmeqKeQ1MKhCfsqQuxUIg==
   dependencies:
     "@8base/apollo-link-ws" "1.0.20"
     "@8base/error-codes" "^1.0.17"
     "@8base/subscriptions-transport-ws" "^0.9.16"
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     apollo-link "1.2.11"
     apollo-link-error "^1.1.10"
     graphql-tag "^2.9.2"
@@ -48,15 +48,15 @@
     zen-observable-ts "^0.8.18"
 
 "@8base/auth@^1.4.4":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/auth/-/auth-1.6.1.tgz#d99e6952222b3b63a6b7314538d76ddae74c60e4"
-  integrity sha512-yay+D7szY9a+VRhGvT5Boraw4j0lb6alkmo9RZ3qfq8P+HF/7tOoBQ2SlF0Rv6WLfLlC29HKtLdMEtauYJko9g==
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/auth/-/auth-1.6.2.tgz#5d96cab8a686a8de3ccc432b6b7d3c92cd6079dd"
+  integrity sha512-mrnj5ltD1L6HlNcjD8M8Vm6DtfXv0CW+79qUkpoyEu53vXnk7J0pFScqwOD8TbCd6AYZEj89MH5GvxCfzRUAxg==
   dependencies:
-    "@8base/api-token-auth-client" "^1.6.1"
-    "@8base/utils" "^1.6.1"
-    "@8base/web-auth0-auth-client" "^1.6.1"
-    "@8base/web-cognito-auth-client" "^1.6.1"
-    "@8base/web-oauth-client" "^1.6.1"
+    "@8base/api-token-auth-client" "^1.6.2"
+    "@8base/utils" "^1.6.2"
+    "@8base/web-auth0-auth-client" "^1.6.2"
+    "@8base/web-cognito-auth-client" "^1.6.2"
+    "@8base/web-oauth-client" "^1.6.2"
     ramda "^0.26.1"
 
 "@8base/error-codes@^1.0.17", "@8base/error-codes@^1.0.22":
@@ -83,10 +83,10 @@
     symbol-observable "^1.0.4"
     ws "^5.2.0"
 
-"@8base/utils@^1.4.4", "@8base/utils@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/utils/-/utils-1.6.1.tgz#059cbbb3d90a8df0292e35c55fbb86c8f8349b46"
-  integrity sha512-BzuwBWAwtKEEZ6SZjdpijHWNPxGfk9XNDU4p1J+QqlxCC1NrKh6KTgv9PQaJ332cqHHPY3qvHmoKVhClHf5MSg==
+"@8base/utils@^1.4.4", "@8base/utils@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/utils/-/utils-1.6.2.tgz#6fe0975c77ff74a73041ce9bfdb4cd75ab1a1831"
+  integrity sha512-yV62UvIsMRdZnxxtSJPTGTLPjJ6PQXgzpqMb4qV2jhPI1+nPAZEUXOGket9CJn5svsHKO26uXCGcCahEEIceMA==
   dependencies:
     "@8base/error-codes" "^1.0.17"
     "@8base/schema-name-generator" "^0.1.5"
@@ -97,40 +97,40 @@
     reselect "^4.0.0"
 
 "@8base/validate@^1.4.4":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/validate/-/validate-1.6.1.tgz#205d0bd0128144e9b8061200b5814b17be9385fb"
-  integrity sha512-rdE30ssjzG61g8ywZcM3P+cXcZMwSBgoDlOnwjiiw9gw8R9ErliDiF2/aBUnvaHyv8HPqyMTxjCvS/CEyrsUyA==
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/validate/-/validate-1.6.2.tgz#1fb13c46000265a1124422188725144c5b08d42f"
+  integrity sha512-4ATnMEyTguas4eFrcMr/uC2WflmpChoFZXn+s/Yiq/2CGOT49K7kJjqV0YRvsRP1dqrMI+dfBSG419Q8TDho0A==
   dependencies:
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     decimal.js "^10.1.1"
     ramda "^0.26.1"
 
-"@8base/web-auth0-auth-client@^1.4.4", "@8base/web-auth0-auth-client@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/web-auth0-auth-client/-/web-auth0-auth-client-1.6.1.tgz#9d1af2350393543a38ef76f1eb2acc0417264c58"
-  integrity sha512-sKtKdxtZx8L/NCq6IvtGeHyB/MBGEvGlPoVEIXXLet/t5akKomJ2J1kUEAvSA98avVLz6qXJaK3EOHKZuwnGhg==
+"@8base/web-auth0-auth-client@^1.4.4", "@8base/web-auth0-auth-client@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/web-auth0-auth-client/-/web-auth0-auth-client-1.6.2.tgz#7507a80a9f741aa37d20def89a468b7ed7a43157"
+  integrity sha512-OvCQj8fCqfWLJ5Z+mFWTR7UjVXDgqVSwOhcfvjZu4JwcAhRwos81ECDzNENMY0hwhAm1YAlvkg5B+Nj+tQZSYw==
   dependencies:
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     auth0-js "^9.11.1"
     jwt-decode "^3.0.0-beta.2"
     ramda "^0.26.1"
 
-"@8base/web-cognito-auth-client@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/web-cognito-auth-client/-/web-cognito-auth-client-1.6.1.tgz#127ae20769afd399f528fbfcfa3b1328f689782a"
-  integrity sha512-6GIZPjbQ/WpwOZ7B6HF4hKdjpOeeSb6uHQd/6OU/aURlqd1Uc6DFbrvWdvPOm9nbafWDWt3amkeph6Ot0QT9Pg==
+"@8base/web-cognito-auth-client@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/web-cognito-auth-client/-/web-cognito-auth-client-1.6.2.tgz#734b9f5f359672b630c1c636218c631feeb45904"
+  integrity sha512-3mUL07jhm5HbjdLvcMuAFM2h0RkC+sXUB7uU3lUWI63VDNPRx6b1oglfR8G05aR9zH4X/s30gmWCTZUuSuXfTA==
   dependencies:
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     jwt-decode "^3.0.0-beta.2"
     qs "^6.9.4"
     ramda "^0.26.1"
 
-"@8base/web-oauth-client@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@8base/web-oauth-client/-/web-oauth-client-1.6.1.tgz#d48d01bd2672adb7ebfa0c0e4d47b307d2f4f06e"
-  integrity sha512-OxomZ5KOA4pR/pf3giLnoCVHHGJ5LcgaeaB0sgyDFrB0lQ1v0oJ5IzedKzhIH1n8/GWCdY8fUaU41yVp04AOOA==
+"@8base/web-oauth-client@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@8base/web-oauth-client/-/web-oauth-client-1.6.2.tgz#3ebbe99d7240ef6e360e5062448fb15a093ff5e0"
+  integrity sha512-w8xSJfZvN9lrQBy2lgVX+jKmE/oSL/bpoWuV4WLo8rJ4z3v2FGP0GHGKElxBBc7KK4kbiRVTWoTNycqDUgAYBw==
   dependencies:
-    "@8base/utils" "^1.6.1"
+    "@8base/utils" "^1.6.2"
     jwt-decode "^3.0.0-beta.2"
 
 "@apollo/react-common@^3.1.0", "@apollo/react-common@^3.1.1":
@@ -2366,9 +2366,9 @@
   integrity sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
 
 "@types/node@>=6":
-  version "16.11.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.1.tgz#2e50a649a50fc403433a14f829eface1a3443e97"
-  integrity sha512-PYGcJHL9mwl1Ek3PLiYgyEKtwTMmkMw4vbiyz/ps3pfdRYLVv+SN7qHVAImrjdAXxgluDEw6Ph4lyv+m9UpRmA==
+  version "17.0.22"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.22.tgz#38b6c4b9b2f3ed9f2e376cce42a298fb2375251e"
+  integrity sha512-8FwbVoG4fy+ykY86XCAclKZDORttqE5/s7dyWZKLXTdv3vRy5HozBEinG5IqhvPXXzIZEcTVbuHlQEI6iuwcmw==
 
 "@types/prop-types@*":
   version "15.7.2"
@@ -3163,9 +3163,9 @@ atob@^2.1.1:
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
 auth0-js@^9.11.1:
-  version "9.17.0"
-  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.17.0.tgz#4f669f0aa4af75761802a1235de821443d20b8b9"
-  integrity sha512-rqHhOq6ZgOaHwz0e46YywsGW4Y2wLF3Fu+y2wT94vbEFNAi5vyJHJYVyNAetAN7w7Ljhda/7SsUs/usuEMRBpQ==
+  version "9.19.0"
+  resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-9.19.0.tgz#09fcf97465c5a9a93b23c63056f9e45d8d4b3be2"
+  integrity sha512-PbzzGqtcfUZj3jnPqEcJYoWH+YNMmHI9woRYBY1VZn+GaU5NIWR1H/2ZAx5ZERZXvte6qQsu2FDNB8V+1N9Ahg==
   dependencies:
     base64-js "^1.5.1"
     idtoken-verifier "^2.2.2"
@@ -4752,9 +4752,9 @@ debug@^4.0.1, debug@^4.1.0:
     ms "^2.1.1"
 
 debug@^4.1.1:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
+  integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   dependencies:
     ms "2.1.2"
 
@@ -6079,9 +6079,9 @@ form-data@~2.3.2:
     mime-types "^2.1.12"
 
 formidable@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.2.tgz#bf69aea2972982675f00865342b982986f6b8dd9"
-  integrity sha512-V8gLm+41I/8kguQ4/o1D3RIHRmhYFG4pnNyonvua+40rqcEmT4+V71yaZ3B457xbbgCsCfjSPi65u/W6vK1U5Q==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.6.tgz#d2a51d60162bbc9b4a055d8457a7c75315d1a168"
+  integrity sha512-KcpbcpuLNOwrEjnbpMC0gS+X8ciDoZE1kkqzat4a8vrprf+s9pKNQ/QIwWfbfs4ltgmFl3MD177SNTkve3BwGQ==
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -6438,9 +6438,9 @@ graphql-prettier@^1.0.5:
     graphql "^14.1.1"
 
 graphql-tag@^2.10.0, graphql-tag@^2.9.2:
-  version "2.12.5"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.5.tgz#5cff974a67b417747d05c8d9f5f3cb4495d0db8f"
-  integrity sha512-5xNhP4063d16Pz3HBtKprutsPrmHZi5IdUGOWRxA2B6VF7BIRGOHZ5WQvDmJXZuPcBg7rYwaFxvQYjqkSdR3TQ==
+  version "2.12.6"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.6.tgz#d441a569c1d2537ef10ca3d1633b48725329b5f1"
+  integrity sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==
   dependencies:
     tslib "^2.1.0"
 
@@ -6533,9 +6533,9 @@ has-symbols@^1.0.0:
   integrity sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=
 
 has-symbols@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423"
-  integrity sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.3.tgz#bb7b2c4349251dce87b125f7bdf874aa7c8b39f8"
+  integrity sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==
 
 has-unicode@^2.0.0, has-unicode@^2.0.1:
   version "2.0.1"
@@ -8698,10 +8698,10 @@ mime-db@1.40.0:
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.40.0.tgz#a65057e998db090f732a68f6c276d387d4126c32"
   integrity sha512-jYdeOMPy9vnxEqFRRo6ZvTZ8d9oPb+k18PKoYNYUe2stVEBPPwsln/qWzdbmaIvnhZ9v2P+CuecK+fpUfsV2mA==
 
-mime-db@1.50.0:
-  version "1.50.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.50.0.tgz#abd4ac94e98d3c0e185016c67ab45d5fde40c11f"
-  integrity sha512-9tMZCDlYHqeERXEHO9f/hKfNXhre5dK2eE/krIvUjZbS2KPcqGDfNShIWS1uW9XOTKQKqK6qbeOci18rbfW77A==
+mime-db@1.52.0:
+  version "1.52.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
+  integrity sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==
 
 "mime-db@>= 1.40.0 < 2":
   version "1.42.0"
@@ -8709,11 +8709,11 @@ mime-db@1.50.0:
   integrity sha512-UbfJCR4UAVRNgMpfImz05smAXK7+c+ZntjaA26ANtkXLlOe947Aag5zdIcKQULAiF9Cq4WxBi9jUs5zkA84bYQ==
 
 mime-types@^2.1.12:
-  version "2.1.33"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.33.tgz#1fa12a904472fafd068e48d9e8401f74d3f70edb"
-  integrity sha512-plLElXp7pRDd0bNZHw+nMd52vRYjLwQjygaNg7ddJ2uJtTlmnTCjWuPKxVu6//AdaRuME84SvLW91sIkBqGT0g==
+  version "2.1.35"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
+  integrity sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==
   dependencies:
-    mime-db "1.50.0"
+    mime-db "1.52.0"
 
 mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24:
   version "2.1.24"
@@ -8733,9 +8733,9 @@ mime@^2.0.3, mime@^2.4.4:
   integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
 
 mime@^2.4.6:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.5.2.tgz#6e3dc6cc2b9510643830e5f19d5cb753da5eeabe"
-  integrity sha512-tqkh47FzKeCPD2PUiPB6pkbMzsCasjxAfC62/Wap5qrUWcb+sFasXUC5I3gYM5iBM8v/Qpn4UK0x+j0iHyFPDg==
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.6.0.tgz#a2a682a95cd4d0cb1d6257e28f83da7e35800367"
+  integrity sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -9303,9 +9303,9 @@ object-inspect@^1.6.0:
   integrity sha512-GJzfBZ6DgDAmnuaM3104jR4s1Myxr3Y3zfIyN4z3UdqN69oSRacNK8UhnobDdC+7J2AHCjGwxQubNJfE70SXXQ==
 
 object-inspect@^1.9.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.11.0.tgz#9dceb146cedd4148a0d9e51ab88d34cf509922b1"
-  integrity sha512-jp7ikS6Sd3GxQfZJPyH3cjcbJF6GZPClgdV+EFygjFLQ5FmW/dRUnTd9PQ9k0JhoNDabWFbpF1yCdSWCC6gexg==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.12.0.tgz#6e2c120e868fd1fd18cb4f18c31741d0d6e776f0"
+  integrity sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==
 
 object-is@^1.0.1:
   version "1.0.1"
@@ -10795,9 +10795,9 @@ qs@6.7.0:
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
 qs@^6.10.1, qs@^6.9.4:
-  version "6.10.1"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
-  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
+  version "6.10.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.3.tgz#d6cde1b2ffca87b5aa57889816c5f81535e22e8e"
+  integrity sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==
   dependencies:
     side-channel "^1.0.4"
 
@@ -11483,9 +11483,9 @@ requires-port@^1.0.0:
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
 reselect@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
-  integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.1.5.tgz#852c361247198da6756d07d9296c2b51eddb79f6"
+  integrity sha512-uVdlz8J7OO+ASpBYoz1Zypgx0KasCY20H+N8JD13oUMtPvSHQuscrHop4KbXrbsBcdB9Ds7lVK7eRkBIfO43vQ==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
