@@ -1,2 +1,2 @@
-export { FileInput } from './FileInput';
+export { FileInput } from './components/FileInput';
 export * from './types';

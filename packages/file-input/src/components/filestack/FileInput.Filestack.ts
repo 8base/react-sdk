@@ -1,24 +1,9 @@
 import React from 'react';
-import { withApollo, WithApolloClient } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import * as filestack from 'filestack-js';
-import gql from 'graphql-tag';
 import { FileInputProps, FileInputState } from '../../types';
 
-const FILE_UPLOAD_INFO_QUERY = gql`
-  query FileUploadInfo {
-    fileUploadInfo {
-      policy
-      signature
-      apiKey
-      path
-    }
-  }
-`;
-
-const FileInputFilestack: React.ComponentType<FileInputProps> = withApollo(
-  // @ts-ignore
-  class FileInput extends React.Component<WithApolloClient<FileInputProps>, FileInputState> {
+  class FileInputFilestack extends React.Component<FileInputProps, FileInputState> {
     public static defaultProps = {
       maxFiles: 1,
       value: null,
@@ -42,7 +27,6 @@ const FileInputFilestack: React.ComponentType<FileInputProps> = withApollo(
       super(props);
 
       this.state = {
-        error: null,
         originalFile: null,
         path: null,
         value: props.value || null,
@@ -53,20 +37,9 @@ const FileInputFilestack: React.ComponentType<FileInputProps> = withApollo(
       this.filestackPromise = this.initFilestack();
     }
 
-    public async initFilestack() {
-      const { client, sessionCache } = this.props;
-
-      let response = null;
-
-      try {
-        response = await client.query({ query: FILE_UPLOAD_INFO_QUERY, fetchPolicy: this.props.fetchPolicy });
-      } catch (e) {
-        this.setState({ error: e });
-
-        return;
-      }
-
-      const { apiKey, policy, signature, path } = response.data.fileUploadInfo;
+    public async initFilestack() {    
+      const { sessionCache, fileUploadSignInfo } = this.props;
+      const { apiKey, policy, signature, path } = fileUploadSignInfo;
 
       this.setState({ path });
 
@@ -160,13 +133,11 @@ const FileInputFilestack: React.ComponentType<FileInputProps> = withApollo(
     };
 
     public render() {
-      const { children } = this.props;
-
-      const { error, value, originalFile } = this.state;
+      const { children, error } = this.props;
+      const { value, originalFile } = this.state;
 
       return children({ pick: this.pick, value, originalFile, error });
     }
-  },
-);
+  };
 
 export { FileInputFilestack };

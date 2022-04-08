@@ -1,4 +1,6 @@
 import { FetchPolicy } from 'apollo-client';
+import { PickerOptions } from 'filestack-js';
+import { ApolloError } from 'apollo-client';
 
 export type FileValue = {
   fileId: string;
@@ -18,7 +20,7 @@ export type FileInputProps = {
     pick: (options: {}) => Promise<void>;
     value: FileInputValue | null;
     originalFile: OriginalFileInputValue | null;
-    error: object | null;
+    error: ApolloError | undefined;
   }) => JSX.Element;
   public?: boolean;
   fetchPolicy?: FetchPolicy;
@@ -26,11 +28,20 @@ export type FileInputProps = {
   sessionCache?: boolean;
   onUploadDone?: (value: FileInputValue, originalFile?: OriginalFileInputValue) => Promise<FileInputValue>;
   value?: FileInputValue | null;
+  fileUploadSignInfo: any;
+  error: ApolloError | undefined;
+};
+
+export type RenderPropType = {
+  pick: (options: PickerOptions) => Promise<void>;
+  value: FileInputValue | null;
+  originalFile: OriginalFileInputValue | null;
+  error: Record<string, unknown> | null;
+  loading?: boolean;
 };
 
 export type FileInputState = {
   path: string | null;
-  error: object | null;
   value: FileInputValue | null;
   originalFile: OriginalFileInputValue | null;
 };
