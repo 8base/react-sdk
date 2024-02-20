@@ -3,7 +3,8 @@ import { withApollo, WithApolloClient } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import * as filestack from 'filestack-js';
 import gql from 'graphql-tag';
-import { FileInputProps, FileInputState } from './types';
+import { FileInputProps, FileInputState, FileInputValue, OriginalFileInputValue } from './types';
+import FileChooser from './FileChooser';
 
 const FILE_UPLOAD_INFO_QUERY = gql`
   query FileUploadInfo {
@@ -46,6 +47,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
         originalFile: null,
         path: null,
         value: props.value || null,
+        isModalOpen: false,
       };
     }
 
@@ -60,6 +62,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
 
       try {
         response = await client.query({ query: FILE_UPLOAD_INFO_QUERY, fetchPolicy: this.props.fetchPolicy });
+        console.log(response);
       } catch (e) {
         this.setState({ error: e });
 
@@ -77,6 +80,14 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
         },
         sessionCache,
       });
+    }
+
+    openModal = () => {
+      this.setState({ isModalOpen: true });
+    };
+
+    closeModal = () => {
+      this.setState({ isModalOpen: false });
     }
 
     public onUploadDone = async ({ filesUploaded }: any) => {
@@ -160,11 +171,91 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
     };
 
     public render() {
-      const { children } = this.props;
+      const { children, useFilestack, onUploadDone, onChange, maxFiles, apiKey, workspace, uploadHost } = this.props;
 
-      const { error, value, originalFile } = this.state;
+      const { error, value, originalFile, isModalOpen } = this.state;
+      console.log(value);
+      if (useFilestack) {
+        return children({ pick: this.pick, value, originalFile, error });
+      } else {
+        return (
+          <>           
+            {children({ openModal: this.openModal, value, originalFile, error })}
 
-      return children({ pick: this.pick, value, originalFile, error });
+            {isModalOpen && (
+              <div
+                style={{
+                  position: 'fixed',
+                  top: '0',
+                  left: '0',
+                  width: '100%',
+                  height: '100%',
+                  background: 'rgba(0, 0, 0, 0.5)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 11999,
+                }}
+              >
+                <div
+                  style={{
+                    background: '#fff',
+                    padding: '20px',
+                    borderRadius: '8px',
+                    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+                  }}
+                >
+                  <FileChooser 
+                    apiKey={apiKey}
+                    workspace={workspace}
+                    uploadHost={uploadHost}
+                    onUploadDone={async (item, originalFile) => {
+                    let result: FileInputValue = item;
+                    if (typeof onUploadDone === 'function') {
+                      result = await onUploadDone(item, originalFile);
+                    }
+                    console.log("result", result);
+                    console.log("item", item);
+                    this.setState({ value: item, originalFile });
+                    this.closeModal();
+                    return result;
+                    //return null;
+                  }}
+                    onChange={(value, originalFile) => {
+                      if (typeof onChange === 'function') {
+                        onChange(value, originalFile);
+                      }
+                    }}
+                    maxFiles={maxFiles}
+                    value={value}
+                  >
+              
+                  </FileChooser>
+                  <button
+                    type="button"
+                    onClick={this.closeModal}
+                    style={{
+                      float: 'right',
+                      bottom: '10px',
+                      right: '10px',
+                      padding: '8px',
+                      background: '#0874F9',
+                      color: '#fff',
+                      border: 'none',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
+          </>
+        );
+
+      }
+
     }
   },
 );
