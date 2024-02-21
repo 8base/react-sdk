@@ -173,7 +173,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
       const { children, useFilestack, onUploadDone, onChange, maxFiles, apiKey, workspace, uploadHost } = this.props;
 
       const { error, value, originalFile, isModalOpen } = this.state;
-      console.log(value);
+      
       if (useFilestack) {
         return children({ pick: this.pick, value, originalFile, error });
       } else {

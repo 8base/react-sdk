@@ -6,7 +6,7 @@ import { FileInputValue, OriginalFileInputValue } from './types';
 
 
 
-interface FileChooserProps {
+interface IFileChooserProps {
   maxFiles: number | 1 ;
   onUploadDone?: (value: FileInputValue, originalFile: OriginalFileInputValue) => Promise<FileInputValue>;
   onChange: (value: any, originalFile: File[])  => void;
@@ -29,7 +29,7 @@ const FILE_UPLOAD_INFO_QUERY = gql`
   }
 `;
 
-const FileChooser: React.FC<FileChooserProps> =  ({ maxFiles, onUploadDone, onChange, client,value,workspace,apiKey,uploadHost }) => {
+const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onChange, client,value,workspace,apiKey,uploadHost }) => {
 
   const [files, setFiles] = useState<File[]>([]);
   const [path, setPath] = useState<string>('');
@@ -283,10 +283,7 @@ const dropzoneStyle: React.CSSProperties = {
 };
 
 
-
-// FileChooser.id = IMPORT_IMAGE_DIALOG;
-
-const FileChooserWithApollo = withApollo<FileChooserProps>(FileChooser);
+const FileChooserWithApollo = withApollo<IFileChooserProps>(FileChooser);
 
 export default FileChooserWithApollo;
 
