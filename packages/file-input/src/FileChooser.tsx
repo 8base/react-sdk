@@ -4,18 +4,16 @@ import { withApollo, WithApolloClient } from 'react-apollo';
 import gql from 'graphql-tag';
 import { FileInputValue, OriginalFileInputValue } from './types';
 
-
 interface IFileChooserProps {
-  maxFiles?: number  ;
+  maxFiles?: number;
   onUploadDone?: (value: FileInputValue, originalFile: OriginalFileInputValue) => Promise<FileInputValue>;
-  onChange: (value: any, originalFile: File[])  => void;
+  onChange: (value: any, originalFile: File[]) => void;
   client: WithApolloClient<any>;
-  value: any; 
-  workspace?: string ;
-  apiKey?: string  ;
-  uploadHost?: string | 'http://localhost:3007' ;
+  value: any;
+  workspace?: string;
+  apiKey?: string;
+  uploadHost?: string | 'http://localhost:3007';
 }
-
 
 const FILE_UPLOAD_INFO_QUERY = gql`
   query FileUploadInfo {
@@ -28,8 +26,16 @@ const FILE_UPLOAD_INFO_QUERY = gql`
   }
 `;
 
-const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onChange, client,value,workspace,apiKey,uploadHost }) => {
-
+const FileChooser: React.FC<IFileChooserProps> = ({
+  maxFiles,
+  onUploadDone,
+  onChange,
+  client,
+  value,
+  workspace,
+  apiKey,
+  uploadHost,
+}) => {
   const [files, setFiles] = useState<File[]>([]);
   const [path, setPath] = useState<string>('');
   const [uploading, setUploading] = useState(false);
@@ -39,7 +45,7 @@ const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onC
     display: 'flex',
     flexWrap: 'wrap',
   };
-  
+
   const cardStyle: React.CSSProperties = {
     width: '120px',
     height: '150px',
@@ -50,7 +56,7 @@ const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onC
     display: 'flex',
     flexDirection: 'column',
   };
-  
+
   const cardBodyStyle: React.CSSProperties = {
     padding: '8px',
     flex: 1,
@@ -59,16 +65,15 @@ const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onC
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-   
   };
-  
+
   const imageStyle: React.CSSProperties = {
-   objectFit: 'cover',
+    objectFit: 'cover',
     height: 'auto',
     marginBottom: '8px',
     borderRadius: '4px',
   };
-  
+
   const fileNameStyle: React.CSSProperties = {
     fontSize: '12px',
     fontWeight: 'bold',
@@ -77,31 +82,27 @@ const FileChooser: React.FC<IFileChooserProps> =  ({ maxFiles, onUploadDone, onC
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
   };
-  
 
-
-const dropzoneStyle: React.CSSProperties = {
-  border: '2px dashed #cccccc',
-  borderRadius: '4px',
-  padding: '20px',
-  textAlign: 'center',
-  cursor: 'pointer',
-};
+  const dropzoneStyle: React.CSSProperties = {
+    border: '2px dashed #cccccc',
+    borderRadius: '4px',
+    padding: '20px',
+    textAlign: 'center',
+    cursor: 'pointer',
+  };
 
   const [error, setError] = useState<Error | null>(null);
 
-
-  const { loading, error: queryError } =  client.query({
+  const { loading, error: queryError } = client.query({
     query: FILE_UPLOAD_INFO_QUERY,
   });
-
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await client.query({
           query: FILE_UPLOAD_INFO_QUERY,
-        });        
+        });
         if (result.data) {
           const { path } = result.data.fileUploadInfo;
           setPath(path);
@@ -110,7 +111,7 @@ const dropzoneStyle: React.CSSProperties = {
         setError(queryError);
       }
     };
-  
+
     fetchData();
   }, []);
 
@@ -130,22 +131,24 @@ const dropzoneStyle: React.CSSProperties = {
     });
   };
 
-
   const uploadToS3 = async (files: File[]) => {
-    const myHeaders = new Headers();    
+    const myHeaders = new Headers();
     setUploading(true);
     myHeaders.append('storage-provider', 'S3');
-    if (apiKey) { myHeaders.append('authorization', apiKey); }
-    if (workspace) { myHeaders.append('workspace', workspace); }
+    if (apiKey) {
+      myHeaders.append('authorization', apiKey);
+    }
+    if (workspace) {
+      myHeaders.append('workspace', workspace);
+    }
 
     const formdata = new FormData();
 
-    files.forEach((file) => {
+    files.forEach(file => {
       formdata.append('files', file, file.name);
     });
 
     formdata.append('bucketName', 'test-dyron');
-
 
     const requestOptions: RequestInit = {
       method: 'POST',
@@ -155,7 +158,7 @@ const dropzoneStyle: React.CSSProperties = {
     };
 
     try {
-      const response = await fetch(uploadHost+'/upload', requestOptions);
+      const response = await fetch(uploadHost + '/upload', requestOptions);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -165,23 +168,23 @@ const dropzoneStyle: React.CSSProperties = {
       setUploadProgress(100);
 
       return result.data;
-    } catch (error) {    
+    } catch (error) {
       throw error;
     } finally {
       setUploading(false);
-      setUploadProgress(0);      
+      setUploadProgress(0);
     }
   };
 
-  const handleUpload = async () => {    
+  const handleUpload = async () => {
     setUploadProgress(1);
     let value = await uploadToS3(files);
-    const originalFile = files.map((item) => item);
+    const originalFile = files.map(item => item);
     if (maxFiles === 1) {
       value = value[0];
     }
     if (typeof onChange === 'function') {
-        onChange(value, originalFile);
+      onChange(value, originalFile);
     }
 
     if (maxFiles === 1) {
@@ -189,13 +192,13 @@ const dropzoneStyle: React.CSSProperties = {
     }
 
     if (typeof onUploadDone === 'function') {
-        onUploadDone(value,originalFile);
+      onUploadDone(value, originalFile);
     }
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: 'image/*' as unknown as Accept
+    accept: ('image/*' as unknown) as Accept,
   });
 
   const renderTableFields = () => {
@@ -218,17 +221,13 @@ const dropzoneStyle: React.CSSProperties = {
                     border: 'none',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.color = 'blue'}
-                  onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => e.currentTarget.style.color = 'gray'}
+                  onMouseOver={(e: React.MouseEvent<HTMLButtonElement>) => (e.currentTarget.style.color = 'blue')}
+                  onMouseOut={(e: React.MouseEvent<HTMLButtonElement>) => (e.currentTarget.style.color = 'gray')}
                 >
                   X
                 </button>
                 <div style={cardBodyStyle}>
-                  <img
-                    src={URL.createObjectURL(file)}
-                    alt={`Preview ${index}`}
-                    style={imageStyle}
-                  />
+                  <img src={URL.createObjectURL(file)} alt={`Preview ${index}`} style={imageStyle} />
                   <p style={fileNameStyle}>{file.name}</p>
                 </div>
               </div>
@@ -237,10 +236,8 @@ const dropzoneStyle: React.CSSProperties = {
       </div>
     );
   };
-  
-  
+
   const memoizedRenderTableFields = useMemo(() => renderTableFields(), [files]);
-  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -256,19 +253,20 @@ const dropzoneStyle: React.CSSProperties = {
         <input {...getInputProps()} />
         {isDragActive ? <p>Drop the files here...</p> : <p>Drag and drop some files here, or click to select files</p>}
       </div>
-     
+
       {files.length > 0 && memoizedRenderTableFields}
 
       {uploadProgress > 0 && <p>Uploading... {uploadProgress}%</p>}
 
       <button
         type="button"
-        onClick={handleUpload} disabled={uploading || files.length === 0}
+        onClick={handleUpload}
+        disabled={uploading || files.length === 0}
         style={{
           marginTop: '10px',
-          padding: '8px',          
-          background: uploading || files.length === 0 ? '#dcdcdc' : '#0874F9', 
-          color: uploading || files.length === 0 ? '#808080' : '#fff', 
+          padding: '8px',
+          background: uploading || files.length === 0 ? '#dcdcdc' : '#0874F9',
+          color: uploading || files.length === 0 ? '#808080' : '#fff',
           border: 'none',
           borderRadius: '4px',
           cursor: 'pointer',
@@ -276,13 +274,10 @@ const dropzoneStyle: React.CSSProperties = {
       >
         Upload
       </button>
-    
     </div>
   );
 };
 
-
 const FileChooserWithApollo = withApollo<IFileChooserProps>(FileChooser);
 
 export default FileChooserWithApollo;
-

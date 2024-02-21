@@ -87,7 +87,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
 
     public closeModal = () => {
       this.setState({ isModalOpen: false });
-    }
+    };
 
     public onUploadDone = async ({ filesUploaded }: any) => {
       if (!this.filestack) {
@@ -173,12 +173,12 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
       const { children, useFilestack, onUploadDone, onChange, maxFiles, apiKey, workspace, uploadHost } = this.props;
 
       const { error, value, originalFile, isModalOpen } = this.state;
-      
+
       if (useFilestack) {
         return children({ pick: this.pick, value, originalFile, error });
       } else {
         return (
-          <>           
+          <>
             {children({ openModal: this.openModal, value, originalFile, error })}
 
             {isModalOpen && (
@@ -204,19 +204,19 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
                     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
                   }}
                 >
-                  <FileChooser 
+                  <FileChooser
                     apiKey={apiKey}
                     workspace={workspace}
                     uploadHost={uploadHost}
                     onUploadDone={async (item, originalFile) => {
-                    let result: FileInputValue = item;
-                    if (typeof onUploadDone === 'function') {
-                      result = await onUploadDone(item, originalFile);
-                    }                  
-                    this.setState({ value: item, originalFile });
-                    this.closeModal();
-                    return result;                   
-                  }}
+                      let result: FileInputValue = item;
+                      if (typeof onUploadDone === 'function') {
+                        result = await onUploadDone(item, originalFile);
+                      }
+                      this.setState({ value: item, originalFile });
+                      this.closeModal();
+                      return result;
+                    }}
                     onChange={(value, originalFile) => {
                       if (typeof onChange === 'function') {
                         onChange(value, originalFile);
@@ -247,9 +247,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
             )}
           </>
         );
-
       }
-
     }
   },
 );

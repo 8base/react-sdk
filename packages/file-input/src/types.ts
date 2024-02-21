@@ -26,9 +26,9 @@ export type FileInputProps = {
   maxFiles?: number;
   sessionCache?: boolean;
   useFilestack?: boolean;
-  workspace?: string ;
-  apiKey?: string ;
-  uploadHost?: string ;
+  workspace?: string;
+  apiKey?: string;
+  uploadHost?: string;
   onUploadDone?: (value: FileInputValue, originalFile?: OriginalFileInputValue) => Promise<FileInputValue>;
   value?: FileInputValue | null;
 };
