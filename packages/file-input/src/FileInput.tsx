@@ -62,7 +62,6 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
 
       try {
         response = await client.query({ query: FILE_UPLOAD_INFO_QUERY, fetchPolicy: this.props.fetchPolicy });
-        console.log(response);
       } catch (e) {
         this.setState({ error: e });
 
@@ -82,11 +81,11 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
       });
     }
 
-    openModal = () => {
+    public openModal = () => {
       this.setState({ isModalOpen: true });
     };
 
-    closeModal = () => {
+    public closeModal = () => {
       this.setState({ isModalOpen: false });
     }
 
@@ -213,13 +212,10 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
                     let result: FileInputValue = item;
                     if (typeof onUploadDone === 'function') {
                       result = await onUploadDone(item, originalFile);
-                    }
-                    console.log("result", result);
-                    console.log("item", item);
+                    }                  
                     this.setState({ value: item, originalFile });
                     this.closeModal();
-                    return result;
-                    //return null;
+                    return result;                   
                   }}
                     onChange={(value, originalFile) => {
                       if (typeof onChange === 'function') {
@@ -228,9 +224,7 @@ const FileInput: React.ComponentType<FileInputProps> = withApollo(
                     }}
                     maxFiles={maxFiles}
                     value={value}
-                  >
-              
-                  </FileChooser>
+                  />
                   <button
                     type="button"
                     onClick={this.closeModal}

@@ -92,8 +92,6 @@ const dropzoneStyle: React.CSSProperties = {
   const [error, setError] = useState<Error | null>(null);
 
 
-  console.log(value);
-
   const { loading, error: queryError } =  client.query({
     query: FILE_UPLOAD_INFO_QUERY,
   });
@@ -104,8 +102,7 @@ const dropzoneStyle: React.CSSProperties = {
       try {
         const result = await client.query({
           query: FILE_UPLOAD_INFO_QUERY,
-        });
-        console.log("result",result);
+        });        
         if (result.data) {
           const { path } = result.data.fileUploadInfo;
           setPath(path);
@@ -136,14 +133,11 @@ const dropzoneStyle: React.CSSProperties = {
 
 
   const uploadToS3 = async (files: File[]) => {
-    const myHeaders = new Headers();
-    debugger
-    console.log(client);
-    console.log(client.options);
+    const myHeaders = new Headers();    
     setUploading(true);
     myHeaders.append('storage-provider', 'S3');
-    if (apiKey) myHeaders.append('authorization', apiKey);
-    if (workspace) myHeaders.append('workspace', workspace);
+    if (apiKey) { myHeaders.append('authorization', apiKey); }
+    if (workspace) { myHeaders.append('workspace', workspace); }
 
     const formdata = new FormData();
 
@@ -172,8 +166,7 @@ const dropzoneStyle: React.CSSProperties = {
       setUploadProgress(100);
 
       return result.data;
-    } catch (error) {
-      console.error('Error uploading to S3:', error);
+    } catch (error) {    
       throw error;
     } finally {
       setUploading(false);
@@ -181,11 +174,10 @@ const dropzoneStyle: React.CSSProperties = {
     }
   };
 
-  const handleUpload = async () => {
-    console.log('Subir archivos:', files);
+  const handleUpload = async () => {    
     setUploadProgress(1);
     let value = await uploadToS3(files);
-    let originalFile = files.map((item) => item);
+    const originalFile = files.map((item) => item);
     if (maxFiles === 1) {
       value = value[0];
     }
@@ -194,7 +186,7 @@ const dropzoneStyle: React.CSSProperties = {
     }
 
     if (maxFiles === 1) {
-      //setFiles([value[0]]);
+      // setFiles([value[0]]);
     }
 
     if (typeof onUploadDone === 'function') {
@@ -292,7 +284,7 @@ const dropzoneStyle: React.CSSProperties = {
 
 
 
-//FileChooser.id = IMPORT_IMAGE_DIALOG;
+// FileChooser.id = IMPORT_IMAGE_DIALOG;
 
 const FileChooserWithApollo = withApollo<FileChooserProps>(FileChooser);
 
