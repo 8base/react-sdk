@@ -7,7 +7,7 @@ import { FileInputValue, OriginalFileInputValue } from './types';
 
 
 interface IFileChooserProps {
-  maxFiles: number | 1 ;
+  maxFiles?: number  ;
   onUploadDone?: (value: FileInputValue, originalFile: OriginalFileInputValue) => Promise<FileInputValue>;
   onChange: (value: any, originalFile: File[])  => void;
   client: WithApolloClient<any>;
@@ -116,7 +116,7 @@ const dropzoneStyle: React.CSSProperties = {
   }, []);
 
   const onDrop = (acceptedFiles: File[]) => {
-    if (maxFiles > 1) {
+    if (maxFiles && maxFiles > 1) {
       setFiles(prevFiles => [...prevFiles, ...acceptedFiles]);
     } else {
       setFiles([acceptedFiles[0]]);

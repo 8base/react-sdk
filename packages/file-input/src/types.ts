@@ -23,7 +23,7 @@ export type FileInputProps = {
   }) => React.ReactNode;
   public?: boolean;
   fetchPolicy?: FetchPolicy;
-  maxFiles: number | 1;
+  maxFiles?: number;
   sessionCache?: boolean;
   useFilestack?: boolean;
   workspace?: string ;
