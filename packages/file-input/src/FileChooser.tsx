@@ -5,7 +5,6 @@ import gql from 'graphql-tag';
 import { FileInputValue, OriginalFileInputValue } from './types';
 
 
-
 interface IFileChooserProps {
   maxFiles?: number  ;
   onUploadDone?: (value: FileInputValue, originalFile: OriginalFileInputValue) => Promise<FileInputValue>;
