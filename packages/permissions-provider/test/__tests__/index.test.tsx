@@ -102,7 +102,12 @@ it('As a developer, I can use `IfAllowed` component for conditional rendering ba
   const testContentRenderFn = jest.fn(() => null);
 
   const testRenderFn = jest.fn(() => (
-    <IfAllowed permissions={[['data', 'Users', 'create'], ['data', 'Users', 'update']]}>
+    <IfAllowed
+      permissions={[
+        ['data', 'Users', 'create'],
+        ['data', 'Users', 'update'],
+      ]}
+    >
       {testContentRenderFn}
     </IfAllowed>
   ));
