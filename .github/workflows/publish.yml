@@ -22,6 +22,9 @@ jobs:
       - name: Run linter
         run: yarn lint
 
+      - name: Run prettierWrite       
+        run: yarn prettier:write
+
       - name: Run prettier
         run: yarn prettier:check
 
