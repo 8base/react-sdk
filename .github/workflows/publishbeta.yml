@@ -1,4 +1,4 @@
-name: publish
+name: publishbeta
 
 on: workflow_dispatch
 
