@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "scripts": {
     "postinstall": "lerna bootstrap",
     "build-packages": "lerna run build --scope @8base-react/* --scope 8base-react-sdk",
