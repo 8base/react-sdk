@@ -5,7 +5,10 @@ on: workflow_dispatch
 jobs:
   publish:
     runs-on: ubuntu-latest
-
+    - uses: actions/setup-node@v1
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
     steps:
       - uses: actions/checkout@v2
 
