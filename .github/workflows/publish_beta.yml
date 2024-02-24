@@ -1,6 +1,10 @@
-name: publish_beta
+name: publish
 
 on: workflow_dispatch
+
+env:
+  NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  NPM_AUTH_TOKEN_ORG: ${{ secrets.NPM_AUTH_TOKEN_ORG }}
 
 jobs:
   publish:
@@ -12,13 +16,24 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://registry.npmjs.org'
-      - run: |
-          yarn --frozen-lockfile
-          yarn build-packages
-          yarn lint
-          yarn prettier:write
-          yarn prettier:check
-          yarn test
-          sh ./bin/publishbeta.sh
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Build packages
+        run: yarn build-packages
+
+      - name: Run linter
+        run: yarn lint
+
+      - name: Run prettierWrite       
+        run: yarn prettier:write
+
+      - name: Run prettier
+        run: yarn prettier:check
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Publish
+        run: sh ./bin/publishbeta.sh
