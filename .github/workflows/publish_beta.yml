@@ -19,6 +19,6 @@ jobs:
           yarn prettier:write
           yarn prettier:check
           yarn test
-          sh ./bin/publish.sh
+          sh ./bin/publishbeta.sh
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
