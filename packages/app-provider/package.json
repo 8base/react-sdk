@@ -22,11 +22,11 @@
     "@8base-react/auth": "^1.7.3-1.8.0-beta.0",
     "@8base-react/table-schema-provider": "^1.7.3-1.8.0-beta.0",
     "@8base/apollo-client": "^1.4.4",
-    "@8base/auth": "^1.4.4",
+    "@8base/auth": "^2.0.0",
     "@8base/error-codes": "^1.0.22",
     "@8base/utils": "^1.4.4",
     "apollo-cache-inmemory": "^1.5.1",
-    "ramda": "^0.26.1"
+    "ramda": "^0.27.2"
   },
   "devDependencies": {
     "@8base/web-auth0-auth-client": "^1.4.4",
